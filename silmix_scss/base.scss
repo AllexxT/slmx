@@ -1,0 +1,150 @@
+@import "./reset.scss";
+@import "./constants.scss";
+
+
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+body {
+    // background: seashell;
+    background: $BACK-BACKGROUND;
+    font-family: Arial, Helvetica, sans-serif;
+    // font-style: italic;
+    // font-size: 22px;
+    font-weight: bold;
+}
+
+.site-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    header {
+        width: 100%;
+        background: $BLOCK-BACKGROUND;
+    }
+    main {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        background: $BLOCK-BACKGROUND;
+    }
+    footer {
+        width: 100%;
+        min-height: 150px;
+        border: 1px solid red;
+    }
+}
+%container {
+    max-width: 1265px;
+    margin: 0px auto;
+    border: 1px solid goldenrod;
+    display: flex;
+    flex-flow: column;
+}
+.container {
+    @extend %container;
+}
+.body-container {
+    @extend %container;
+    height: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-around;
+    // justify-content: flex-end;
+    .spacer {
+        display: flex;
+        flex: 1 1 33.33%;
+    }
+
+    // .header__logo
+
+    &__logo {
+        max-width: 400px;
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+}
+.contacts {
+    display: flex;
+    flex: 1 1 33.33%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;;
+    &__items {
+    }
+    // .contacts__item
+
+    &__item {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+}
+
+.top-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background: $BACK-BACKGROUND;
+    // .top-menu__item
+
+    &__item {
+        margin: 5px 10px;
+    }
+
+    // .top-menu__link
+
+    &__link {
+        font-size: 18px;
+        color: black;
+        font-style: italic;
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+.content {
+    background: $BLOCK-BACKGROUND;
+    border: 1px solid blue;
+    height:100%;
+}
+
+.body-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+.side-menu {
+    width: 250px;
+    background: $BLOCK-BACKGROUND;
+    display: inline-block;
+    list-style-type: none;
+    font-size: 16px;
+    border-right: 6px solid $BACK-BACKGROUND;
+    text-align: center;
+    &__item {
+        padding: 7px 0;
+    }
+
+    // .side-menu__link
+
+    &__link {
+        font-size: 18px;
+        color: black;
+        font-style: italic;
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+

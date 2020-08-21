@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'ckeditor',
     'livereload',
+    'frontend',
+    'catalog',
 ]
 
 MIDDLEWARE = [

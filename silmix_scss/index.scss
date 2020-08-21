@@ -1,0 +1,51 @@
+@import 'constants.scss';
+
+.title {
+    display: block;
+    font-size: 18px;
+    font-style: italic;
+    padding: 8px 0 8px 5px;
+    border-bottom: 6px solid $BACK-BACKGROUND;
+
+}
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+
+		// .catalog__item
+
+		&__item {
+            // width: 350px;
+            flex: 0 1 350px;
+            // border: 1px solid green;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding: 30px 0;
+            border-right: 3px solid $BACK-BACKGROUND;
+            border-bottom: 3px solid $BACK-BACKGROUND;
+		}
+
+		// .catalog__item-image
+
+		&__item-image {
+            display: block;
+            width: 200px;
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
+		}
+
+		// .catalog__item-title
+
+		&__item-title {
+            max-width: 200px;
+            text-align: center;
+            h2 {
+                font-size: 16px;
+                font-weight: bold;
+                font-style: italic;
+            }
+		}
+}

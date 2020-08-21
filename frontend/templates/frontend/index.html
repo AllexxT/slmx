@@ -1,0 +1,44 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% comment %}
+Head
+{% endcomment %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'frontend/css/index.css' %}">
+{% endblock meta %}
+<title>{% block title %} Silmix | Главная страница
+    {% endblock title %}</title>
+{% comment %}
+Body
+{% endcomment %}
+{% block content %}
+<div class="title">
+    <h1>КАТАЛОГ ПРОДУКЦИИ</h1>
+</div>
+<div class="catalog">
+    <div class="catalog__item">
+        <a href="" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
+        <div class="catalog__item-title">
+            <h2>Смеси для систем утепления</h2>
+        </div>
+    </div>
+    <div class="catalog__item">
+        <a href="" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
+        <div class="catalog__item-title">
+            <h2>Смеси для систем утепления</h2>
+        </div>
+    </div>
+    <div class="catalog__item">
+        <a href="" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
+        <div class="catalog__item-title">
+            <h2>Смеси для систем утепления</h2>
+        </div>
+    </div>
+    <div class="catalog__item">
+        <a href="" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
+        <div class="catalog__item-title">
+            <h2>Смеси для систем утепления</h2>
+        </div>
+    </div>
+</div>
+{% endblock content %}

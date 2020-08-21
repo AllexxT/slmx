@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'frontend/css/base.css' %}">
+    {% block meta %}
+    {% endblock meta %}
+    <title>{% block title %} SILMIX
+        {% endblock title %}</title>
+</head>
+
+<body>
+    <div class="mobile-nav"></div>
+    <div class="site-section">
+        <header>
+            <div class="container">
+                <div class="header">
+                    <div class="spacer"></div>
+                    <div class="header__logo"><img src="{% static 'frontend/images/Logo.jpg' %}" alt="Silmix"></div>
+                    <div class="contacts">
+                        <div class="contacts__items">
+                            <div class="contacts__item">+380634566205</div>
+                            <div class="contacts__item">+380634566205</div>
+                            <div class="contacts__item">silmix@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="top-menu">
+                <li class="top-menu__item"><a href="" class="top-menu__link">О КОМПАНИИ</a></li>
+                <li class="top-menu__item"><a href="" class="top-menu__link">Продукция</a></li>
+                <li class="top-menu__item"><a href="" class="top-menu__link">Полезная информация</a></li>
+                <li class="top-menu__item"><a href="" class="top-menu__link">Сертификаты</a></li>
+                <li class="top-menu__item"><a href="" class="top-menu__link">Наши работы</a></li>
+            </ol>
+        </header>
+        <main>
+            <div class="content">
+                <div class="body-container">
+                    <div class="body-wrapper">
+                        <ol class="side-menu">
+                            <li class="side-menu__item"><a href="" class="side-menu__link">О КОМПАНИИ</a></li>
+                            <li class="side-menu__item"><a href="" class="side-menu__link">Продукция</a></li>
+                            <li class="side-menu__item"><a href="" class="side-menu__link">Полезная информация</a></li>
+                            <li class="side-menu__item"><a href="" class="side-menu__link">Сертификаты</a></li>
+                            <li class="side-menu__item"><a href="" class="side-menu__link">Наши работы</a></li>
+                            <li class="side-menu__item"><a href="" class="side-menu__link">Контакты</a></li>
+                        </ol>
+                        <div class="main-content">
+                            {% block content %}
+                            Контентt
+                            {% endblock content %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+
+</html>
