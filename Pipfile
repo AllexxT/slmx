@@ -9,6 +9,8 @@ verify_ssl = true
 django-cors-headers = "*"
 django-ckeditor = "*"
 django-livereload-server = "*"
+django-uuslug = "*"
+django-versatileimagefield = "*"
 
 [requires]
 python_version = "3.7"

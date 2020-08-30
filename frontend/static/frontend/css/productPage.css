@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.title { display: block; font-size: 18px; font-style: italic; padding: 8px 0 8px 5px; border-bottom: 6px solid #e6ebe5; }
+
+.title h1 { font-size: 31px; font-weight: 100; }
+
+.product { display: flex; }
+
+.product__image-container { max-height: 380px; }
+
+.product__image { text-align: center; position: relative; display: flex; padding: 0 15px; flex: 0 1 33%; }
+
+.product__image img { height: 100%; object-fit: contain; }
+
+.product__info { overflow: hidden; position: relative; height: 427px; margin-top: 8px; padding-left: 25px; }
+
+.benefits { display: flex; flex-flow: column; }
+
+.benefits__list { padding-left: 20px; width: 100%; }
+
+.benefits__list li { color: #727272; display: inline-block; float: left; font-size: 16px; line-height: 25px; margin-right: 10%; position: relative; width: 40%; }
+
+.benefits__list li::after { background: url(../images/birdie.png); background-repeat: no-repeat; content: ""; height: 18px; left: -20px; position: absolute; top: 0; width: 19px; }
+
+.info-header { color: #2b2a29; font-size: 25px; margin: 15px 0 5px 0; }
+
+.specific table { color: #727272; font-size: 15px; margin-bottom: 40px; text-align: left; width: 100%; max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0; }
+
+.specific table tr:nth-child(2n) { background: #e6ebe5; /* Цвет фона */ }
+
+.specific table td { padding: 5px; line-height: 20px; }
+
+.read-more { background: url(../images/read_more.png); background-repeat: repeat-x; bottom: 0; cursor: pointer; height: 56px; position: absolute; text-align: center; width: 96%; z-index: 94; }
+
+.read-more span { color: #0393bf; cursor: pointer; display: block; font-size: 15px; margin-top: 30px; text-decoration: underline; }
+
+.opened { height: unset; }
+
+.description { padding: 0 20px; margin: 0 0 20px 0; }
+
+.description__label { margin-bottom: 10px; }
+
+.description__label p { color: #727272; font-size: 18px; }
+
+.description__text { color: #727272; line-height: 18px; }

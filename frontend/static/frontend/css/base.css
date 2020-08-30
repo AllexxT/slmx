@@ -35,17 +35,17 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; }
 
 html { overflow-y: scroll; scroll-behavior: smooth; }
 
-body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; }
 
 .site-section { display: flex; flex-direction: column; height: 100%; }
 
-.site-section header { width: 100%; background: whitesmoke; }
+.site-section header { width: 100%; background: white; }
 
-.site-section main { display: flex; flex-grow: 1; flex-direction: column; background: whitesmoke; }
+.site-section main { display: flex; flex-grow: 1; flex-direction: column; background: white; }
 
-.site-section footer { width: 100%; min-height: 150px; border: 1px solid red; }
+.site-section footer { width: 100%; min-height: 150px; }
 
-.container, .body-container { max-width: 1265px; margin: 0px auto; border: 1px solid goldenrod; display: flex; flex-flow: column; }
+.container, .body-container { max-width: 1265px; margin: 0px auto; display: flex; flex-flow: column; }
 
 .body-container { height: 100%; }
 
@@ -57,11 +57,13 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; font-weig
 
 .header__logo img { object-fit: contain; width: 100%; }
 
-.contacts { display: flex; flex: 1 1 33.33%; flex-flow: column; align-items: center; justify-content: flex-end; }
+.contacts { display: flex; flex: 1 1 33.33%; flex-flow: column; align-items: center; justify-content: flex-end; font-style: italic; }
+
+.contacts__items { padding-bottom: 5px; }
 
 .contacts__item { margin-top: 15px; font-size: 16px; }
 
-.top-menu { list-style-type: none; display: flex; justify-content: center; background: #e6ebe5; }
+.top-menu { list-style-type: none; display: flex; justify-content: center; background: #e6ebe5; font-weight: bold; }
 
 .top-menu__item { margin: 5px 10px; }
 
@@ -69,11 +71,11 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; font-weig
 
 .top-menu__link:hover { color: red; }
 
-.content { background: whitesmoke; border: 1px solid blue; height: 100%; }
+.content { background: white; height: 100%; }
 
 .body-wrapper { display: flex; height: 100%; }
 
-.side-menu { width: 250px; background: whitesmoke; display: inline-block; list-style-type: none; font-size: 16px; border-right: 6px solid #e6ebe5; text-align: center; }
+.side-menu { width: 280px; background: white; display: inline-block; list-style-type: none; font-size: 16px; border-right: 6px solid #e6ebe5; text-align: center; font-weight: bold; }
 
 .side-menu__item { padding: 7px 0; }
 

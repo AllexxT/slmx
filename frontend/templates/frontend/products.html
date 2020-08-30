@@ -1,0 +1,57 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% comment %}
+Head
+{% endcomment %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'frontend/css/products.css' %}">
+{% endblock meta %}
+<title>{% block title %} Silmix | Главная страница
+    {% endblock title %}</title>
+{% comment %}
+Body
+{% endcomment %}
+{% block content %}
+<div class="title">
+    <h1>{{ title }}</h1>
+</div>
+<ul class="products">
+    <li class="item">
+        <img class="item__novelty" src="{% static 'frontend/images/novelty_label.png' %}" alt="">
+        <a href="" class="item__image">
+            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        </a>
+        <a href="" class="item__name">Название товара</a>
+        <p class="item__mini-description">Небольшое описание товара</p>
+    </li>
+    <li class="item">
+        <a href="" class="item__image">
+            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        </a>
+        <a href="" class="item__name">Название товара</a>
+        <p class="item__mini-description">Небольшое описание товара</p>
+    </li>
+    <li class="item">
+        <a href="" class="item__image">
+            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        </a>
+        <a href="" class="item__name">Название товара</a>
+        <p class="item__mini-description">Небольшое описание товара</p>
+    </li>
+    <li class="item">
+        <a href="" class="item__image">
+            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        </a>
+        <a href="" class="item__name">Название товара</a>
+        <p class="item__mini-description">Небольшое описание товара</p>
+    </li>
+    <li class="item">
+        <a href="" class="item__image">
+            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        </a>
+        <a href="" class="item__name">Название товара</a>
+        <p class="item__mini-description">Небольшое описание товара</p>
+    </li>
+
+</ul>
+{% endblock content %}
