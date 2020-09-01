@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from catalog.models import (
-    Category, Page,
+    Category, Page, Product, Benefits, Specific
 )
 
 
@@ -34,4 +34,31 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         '_category',
         'categoryImage'
+    )
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+
+    class BenefitsInline(admin.TabularInline):
+        model = Benefits
+        extra = 0
+
+    class SpecificInline(admin.TabularInline):
+        model = Specific
+        extra = 0
+    inlines = [BenefitsInline, SpecificInline]
+
+    fields = (
+        'name',
+        'category',
+        'position',
+        'seoDescription',
+        'seoKeywords',
+        'description',
+        'productImage',
+    )
+    list_display = (
+        'name',
+        'description',
     )
