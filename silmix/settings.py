@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from silmix.versatileConfig import VERSATILEIMAGEFIELD_SETTINGS
 from silmix.ckeditorConfig import CKEDITOR_CONFIGS
+from silmix.SK import SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -20,9 +21,6 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ut2@1#@w=g%n)8nyu9&^01dc6gt$_j0i@a9$-z6&61c*mp!d6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,6 +129,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 # Static files (CSS, JavaScript, Images)

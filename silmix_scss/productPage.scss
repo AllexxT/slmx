@@ -1,17 +1,5 @@
 @import "constants.scss";
 
-.title {
-    display: block;
-    font-size: 18px;
-    font-style: italic;
-    padding: 8px 0 8px 5px;
-    border-bottom: 6px solid $BACK-BACKGROUND;
-    h1 {
-        font-size: 31px;
-        font-weight: 100;
-    }
-}
-
 .product {
     display: flex;
 

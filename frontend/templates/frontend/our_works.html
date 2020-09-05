@@ -1,0 +1,27 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% comment %}
+Head
+{% endcomment %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
+<meta name="description" content="{{ product.seoDescription }}">
+{% endblock meta %}
+<title>
+    {% block title %}
+    {% if content.title %}
+    {{ content.title }}
+    {% else %}
+    {{ content.readableTitle }} - Silmix
+    {% endif %}
+    {% endblock title %}
+</title>
+{% comment %}
+Body
+{% endcomment %}
+{% block content %}
+<div class="title">
+    <h1>{{ content.readableTitle }}</h1>
+</div>
+
+{% endblock content %}

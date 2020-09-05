@@ -84,3 +84,7 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; }
 .side-menu__link:hover { color: red; }
 
 .main-content { display: flex; flex-flow: column; width: 100%; }
+
+.title { display: block; font-size: 18px; font-style: italic; padding: 8px 0 8px 5px; border-bottom: 6px solid #e6ebe5; }
+
+.title h1 { font-size: 31px; font-weight: 100; }

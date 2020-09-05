@@ -5,9 +5,17 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
+<meta name="description" content="{{ product.seoDescription }}">
 {% endblock meta %}
-<title>{% block title %} Silmix | Название товара
-    {% endblock title %}</title>
+<title>
+    {% block title %}
+    {% if product.title %}
+    {{ product.title }}
+    {% else %}
+    {{ product.name }} - Silmix
+    {% endif %}
+    {% endblock title %}
+</title>
 {% comment %}
 Body
 {% endcomment %}

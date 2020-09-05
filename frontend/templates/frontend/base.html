@@ -30,11 +30,11 @@
                 </div>
             </div>
             <ol class="top-menu">
-                <li class="top-menu__item"><a href="" class="top-menu__link">О КОМПАНИИ</a></li>
+                <li class="top-menu__item"><a href="{% url 'about' %}" class="top-menu__link">О КОМПАНИИ</a></li>
                 <li class="top-menu__item"><a href="/" class="top-menu__link">Продукция</a></li>
-                <li class="top-menu__item"><a href="" class="top-menu__link">Полезная информация</a></li>
-                <li class="top-menu__item"><a href="" class="top-menu__link">Сертификаты</a></li>
-                <li class="top-menu__item"><a href="" class="top-menu__link">Наши работы</a></li>
+                <li class="top-menu__item"><a href="{% url 'useful_info' %}" class="top-menu__link">Полезная информация</a></li>
+                <li class="top-menu__item"><a href="{% url 'sertificates' %}" class="top-menu__link">Сертификаты</a></li>
+                <li class="top-menu__item"><a href="{% url 'our_works' %}" class="top-menu__link">Наши работы</a></li>
             </ol>
         </header>
         <main>
@@ -42,12 +42,12 @@
                 <div class="body-container">
                     <div class="body-wrapper">
                         <ol class="side-menu">
-                            <li class="side-menu__item"><a href="" class="side-menu__link">О КОМПАНИИ</a></li>
+                            <li class="side-menu__item"><a href="{% url 'about' %}" class="side-menu__link">О КОМПАНИИ</a></li>
                             <li class="side-menu__item"><a href="/" class="side-menu__link">Продукция</a></li>
-                            <li class="side-menu__item"><a href="" class="side-menu__link">Полезная информация</a></li>
-                            <li class="side-menu__item"><a href="" class="side-menu__link">Сертификаты</a></li>
-                            <li class="side-menu__item"><a href="" class="side-menu__link">Наши работы</a></li>
-                            <li class="side-menu__item"><a href="" class="side-menu__link">Контакты</a></li>
+                            <li class="side-menu__item"><a href="{% url 'useful_info' %}" class="side-menu__link">Полезная информация</a></li>
+                            <li class="side-menu__item"><a href="{% url 'sertificates' %}" class="side-menu__link">Сертификаты</a></li>
+                            <li class="side-menu__item"><a href="{% url 'our_works' %}" class="side-menu__link">Наши работы</a></li>
+                            <li class="side-menu__item"><a href="{% url 'contacts' %}" class="side-menu__link">Контакты</a></li>
                         </ol>
                         <div class="main-content">
                             {% block content %}

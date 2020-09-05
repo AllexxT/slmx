@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from pages.views import *
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -18,4 +19,10 @@ urlpatterns = [
 
     path('shtukaturnye-smesi/', views.forPlaster, name='shtukaturka'),
     path('shtukaturnye-smesi/<str:slug>', views.productPage),
+
+    path('sertifikaty/', sertificates, name='sertificates'),
+    path('nashi-raboty/', our_works, name='our_works'),
+    path('o-kompanii/', about, name='about'),
+    path('kontakty/', contacts, name='contacts'),
+    path('poleznaya-informaciya/', useful_info, name='useful_info'),
 ]
