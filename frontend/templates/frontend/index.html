@@ -5,6 +5,9 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/index.css' %}">
+{% if content.title %}<title>{{ content.title }}</title>{% endif %}
+<meta name="description" content="{{ content.description }}">
+<meta name="keywords" content="{{ content.keywords }}">
 {% endblock meta %}
 <title>{% block title %} Silmix | Главная страница
     {% endblock title %}</title>
@@ -13,38 +16,23 @@ Body
 {% endcomment %}
 {% block content %}
 <div class="title">
-    <h1>КАТАЛОГ ПРОДУКЦИИ</h1>
+    <h1>{{ content.readableTitle}}</h1>
 </div>
 <div class="catalog">
+    {% for item in categories %}
     <div class="catalog__item">
-        <a href="{% url 'uteplenie' %}" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
+        <a href="{{ item.get_absolute_url }}" class="catalog__item-image">
+            <img src="
+            {% if item.categoryImage %}
+            /media/{{ item.categoryImage }}
+            {% else %}
+            {% static 'frontend/images/placeholder.png' %}
+            {% endif %}" alt="{{ item.readableCategory }} - Silmix">
+        </a>
         <div class="catalog__item-title">
-            <h2>Смеси для утепления</h2>
+            <h2><a href="{{ item.get_absolute_url }}">{{ item.readableCategory }}</a></h2>
         </div>
     </div>
-    <div class="catalog__item">
-        <a href="{% url 'pol' %}" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
-        <div class="catalog__item-title">
-            <h2>Смеси для пола</h2>
-        </div>
-    </div>
-    <div class="catalog__item">
-        <a href="{% url 'kladka' %}" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
-        <div class="catalog__item-title">
-            <h2>Кладочные смеси</h2>
-        </div>
-    </div>
-    <div class="catalog__item">
-        <a href="{% url 'oblicovka' %}" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
-        <div class="catalog__item-title">
-            <h2>Смеси для облицовки</h2>
-        </div>
-    </div>
-    <div class="catalog__item">
-        <a href="{% url 'shtukaturka' %}" class="catalog__item-image"><img src="{% static 'frontend/images/item.webp' %}" alt=""></a>
-        <div class="catalog__item-title">
-            <h2>Штукатурные смеси</h2>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 {% endblock content %}

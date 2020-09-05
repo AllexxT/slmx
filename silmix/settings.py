@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'versatileimagefield',
     'frontend',
     'catalog',
+    'pages',
     
 ]
 

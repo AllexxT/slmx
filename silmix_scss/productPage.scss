@@ -16,17 +16,17 @@
     display: flex;
 
     &__image-container {
-        max-height: 380px;
+        max-width: 380px;
     }
 
     &__image {
         text-align: center;
         position: relative;
         display: flex;
-        padding: 0 15px;
+        padding: 15px 15px 0 15px;
         flex: 0 1 33%;
         img {
-            height: 100%;
+            width: 100%;
             object-fit: contain;
         }
     }
@@ -37,12 +37,14 @@
         height: 427px;
         margin-top: 8px;
         padding-left: 25px;
+        max-width: 400px;
     }
 }
 
 .benefits {
     display: flex;
     flex-flow: column;
+    width: 115%;
     &__list {
         padding-left: 20px;
         width: 100%;

@@ -13,34 +13,39 @@ Body
 {% endcomment %}
 {% block content %}
 <div class="title">
-    <h1>Название товара</h1>
+    <h1>{{ product.name }}</h1>
 </div>
 <div class="product">
     <div class="product__image">
         <div class="product__image-container">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+            <img src="
+            {% if product.productImage %}
+            /media/{{ product.productImage }}
+            {% else %}
+            {% static 'frontend/images/placeholder.png' %}
+            {% endif %}" alt="product.name">
         </div>
     </div>
     <div class="product__info">
         <div class="benefits">
-            <p class="info-header">Преимущества</p>
+            <p class="info-header">{% if product.benefits_set.all|length > 0 %}Преимущества{% endif %} </p>
             <ul class="benefits__list">
-                <li>Преимущество 1</li>
-                <li>Преимущество 2</li>
-                <li>Три</li>
-                <li>Четыре</li>
-                <li>Пять</li>
+                {% for benefit in product.benefits_set.all %}
+                <li>{{ benefit }}</li>
+                {% endfor %}
             </ul>
         </div>
         <div class="specific">
-            <p class="info-header">Технические данные</p>
+            <p class="info-header">{% if product.specific_set.all|length > 0 %}Технические данные{% endif %}</p>
             <table class="specific__table">
                 <tbody>
+                    {% for spec in product.specific_set.all %}
                     <tr>
-                        <td>Пропорция смеси</td>
-                        <td>123.345 л/т</td>
+                        <td>{{ spec.specific }}</td>
+                        <td>{{ spec.value }}</td>
                     </tr>
-                    <tr>
+                    {% endfor %}
+                    {% comment %} <tr>
                         <td>Время пригодности к работе</td>
                         <td>не менее 2 часов</td>
                     </tr>
@@ -71,7 +76,7 @@ Body
                     <tr>
                         <td>asdf смеси</td>
                         <td>123.345 л/т</td>
-                    </tr>
+                    </tr> {% endcomment %}
                 </tbody>
             </table>
         </div>
@@ -84,16 +89,7 @@ Body
             <p>Описание:</p>
         </div>
         <div class="description__text">
-            <p>Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vestibulum
-            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor
-            sit amet aliquam vel, ullamcorper sit amet ligula.</p>
-
-            <p>Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada. Curabitur aliquet
-            quam id dui posuere blandit.</p>
-
-            <p>Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur
-            sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-            </p>
+            {{ product.description | safe }}
         </div>
     </div>
 </div>

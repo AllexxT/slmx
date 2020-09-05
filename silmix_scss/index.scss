@@ -19,7 +19,7 @@
 
 		&__item {
             // width: 350px;
-            flex: 0 1 344.8px;
+            flex: 0 1 344.9px;
             // border: 1px solid green;
             display: flex;
             flex-flow: column;
@@ -27,6 +27,7 @@
             padding: 30px 0;
             border-right: 3px solid $BACK-BACKGROUND;
             border-bottom: 3px solid $BACK-BACKGROUND;
+            justify-content: space-between;
 		}
 
 		// .catalog__item-image
@@ -50,7 +51,7 @@
                 // font-weight: bold;
                 font-style: italic;
                 text-transform: uppercase;
-                line-height: 25px;
+                line-height: 35px;
             }
 		}
 }

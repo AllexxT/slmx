@@ -1,3 +1,70 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from versatileimagefield.fields import VersatileImageField, PPOIField
 
-# Create your models here.
+
+class InPageImages(models.Model):
+    page = models.ForeignKey(
+        "Page", verbose_name='Страница', on_delete=models.CASCADE,
+        null=True, default='/static/frontend/images/placeholder.png'
+    )
+    imageName = models.CharField('Название', max_length=50)
+    categoryImage = VersatileImageField(
+        verbose_name='Image', ppoi_field='ppoi', blank=True,
+        null=True
+    )
+    ppoi = PPOIField()
+
+    def __str__(self):
+        return self.imageName
+    class Meta:
+        verbose_name_plural = 'Изображения на странице'
+        verbose_name = 'Изображение'
+
+
+class InPageFiles(models.Model):
+    page = models.ForeignKey(
+        "Page", verbose_name='Страница', on_delete=models.CASCADE,
+        null=True
+    )
+    fileName = models.CharField('Название', max_length=50)
+    file = models.FileField('Файл', blank=True, null=True)
+
+    def __str__(self):
+        return self.fileName
+    class Meta:
+        verbose_name_plural = 'Файлы страницы'
+        verbose_name = 'Файл'
+
+
+class Page(models.Model):
+    page = models.CharField("Страница", max_length=30, primary_key=True)
+    title = models.CharField(
+        "СЕО  Заголовок", max_length=165, null=True, blank=True)
+    readableTitle = models.CharField(
+        "Заголовок на странице", max_length=165, null=True, blank=True)
+    description = models.TextField(
+        "СЕО Описание(скрытое)", blank=True, null=True)
+    keywords = models.TextField(
+        "СЕО Ключевые слова", blank=True, null=True)
+    body = RichTextField(
+        "Текст на странице", blank=True, null=True)
+
+    def keywordsLength(self):
+        if self.keywords == None or len(self.keywords.split(',')) <= 1:
+            return "Нет ключевых фраз"
+        return f"Количество ключевых фраз - «{len(self.keywords.split(','))}»"
+    keywordsLength.short_description = 'Ключевые фразы SEO'
+
+    def descriptionLength(self):
+        if self.description == None or len(self.description.split(' ')) <= 1:
+            return "SEO описание отсутствует"
+        return f"Количество слов в SEO описании - «{len(self.description.split(' '))}»"
+    descriptionLength.short_description = 'SEO описание'
+
+    def __str__(self):
+        return str(self.page)
+
+    class Meta:
+        verbose_name_plural = 'Страницы и СЕО'
+        verbose_name = 'Страницу СЕО'

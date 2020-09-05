@@ -19,21 +19,38 @@ class Category(models.Model):
         (OBLICOVKA, 'Смеси для облицовки'),
         (SHTUKATURKA, 'Штукатурные смеси'),
     )
-    _category = models.CharField(
-        'Категория', max_length=2,
-        choices=CATEGORIES, primary_key=True
+    categoryName = models.CharField(
+        'Название категории', max_length=2,
+        choices=CATEGORIES, primary_key=True,
+        default='/static/frontend/images/placeholder.png'
+    )
+    slugUrl = models.CharField(
+        'Адрес страницы', max_length=200, null=True,
+        blank=True
     )
     
+    def get_absolute_url(self):
+        return self.slugUrl
+
+    def readableCategory(self):
+        for item in self.CATEGORIES:
+            if item[0] == self.categoryName:
+                return str(item[1])
+    
+    def products(self):
+        return self.product_set.all()
+    
     categoryImage = VersatileImageField(
-        verbose_name='Photo', ppoi_field='ppoi', blank=True
+        verbose_name='Image', ppoi_field='ppoi', blank=True,
+        null=True
     )
     ppoi = PPOIField()
 
     def __str__(self):
         for item in self.CATEGORIES:
-            if item[0] == self._category:
+            if item[0] == self.categoryName:
                 return str(item[1])
-        return str(self._category)
+        return str(self.categoryName)
 
     class Meta:
         verbose_name_plural = 'Категории товаров'
@@ -70,22 +87,42 @@ class Specific (models.Model):
 
 class Product(models.Model):
     name = models.CharField('Название', max_length=150)
+    price = models.FloatField('Цена', blank=True, null=True)
+    title = models.CharField(
+        "СЕО  Заголовок", max_length=165, null=True, blank=True,
+        default=''
+    )
     seoDescription = models.TextField(
         'СЕО описание страницы с товаром(скрытое)', blank=True, null=True
     )
     seoKeywords = models.TextField(
-        'СЕО описание страницы с товаром(скрытое)', blank=True, null=True
+        'СЕО ключевые фразы', blank=True, null=True
     )
     description = RichTextField('Описание на странице', null=True, blank=True)
     position = models.FloatField(
-        'Позиция товара в списке товаров', blank=True, null=True, default=0
+        'Позиция', blank=True, null=True, default=0
     )
-    productImage = VersatileImageField(
-        verbose_name='Photo', ppoi_field='ppoi', blank=True
-    )
+    discount = models.BooleanField('Скидка', blank=True, default=False)
+    sertificate = models.BooleanField('Сертификат', blank=True, default=False)
     category = models.ForeignKey(
         Category, verbose_name="Категория", on_delete=models.CASCADE
     )
+    
+    def seoInfo(self):
+        if len(self.seoDescription) == 0 and self.title == None:
+            return 'Отсутствует'
+        elif len(self.seoDescription) != 0 and self.title != None:
+            return 'Настроено'
+        else:
+            return 'Не полное'
+        return 'Ошибка'
+    seoInfo.short_description = 'SEO товара'
+
+    # VersatileImageField
+    productImage = VersatileImageField(
+        verbose_name='Photo', ppoi_field='ppoi', blank=True,
+    )
+    ppoi = PPOIField()
 
     # UUSLUG
     slug = models.CharField(max_length=200, null=True)
@@ -97,6 +134,9 @@ class Product(models.Model):
         self.slug = uuslug(self.name, instance=self)
         super(Product, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return f'{self.name}'
+
     class Meta:
         verbose_name_plural = 'Товары'
         verbose_name = 'Товар'
@@ -104,27 +144,3 @@ class Product(models.Model):
 ############################### Product end #
 
 
-class Page(models.Model):
-    page = models.CharField("Страница", max_length=30, primary_key=True)
-    title = models.CharField(
-        "СЕО  Заголовок", max_length=165, null=True, blank=True)
-    readableTitle = models.CharField(
-        "Читаемый заголовок", max_length=165, null=True, blank=True)
-    description = models.TextField(
-        "СЕО Описание(скрытое)", blank=True, null=True)
-    keywords = models.TextField(
-        "СЕО Ключевые слова", blank=True, null=True)
-    body = RichTextField(
-        "Текст на странице", blank=True, null=True)
-
-    def keywordsLength(self):
-        if len(self.keywords.split(',')) <= 1:
-            return "Нет ключевых фраз"
-        return f"Количество ключевых фраз - «{len(self.keywords.split(','))}»"
-        
-    def __str__(self):
-        return str(self.page)
-
-    class Meta:
-        verbose_name_plural = 'Страницы СЕО'
-        verbose_name = 'Страницу СЕО'

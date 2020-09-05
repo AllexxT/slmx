@@ -4,14 +4,18 @@
 
 .products { display: flex; flex-wrap: wrap; }
 
-.item { position: relative; flex: 0 1 25%; min-height: 350px; border-right: 1px solid #e6ebe5; border-bottom: 1px solid #e6ebe5; padding: 0 5px; }
+.item { display: flex; flex-flow: column; position: relative; flex: 0 1 25%; min-height: 350px; border-right: 1px solid #e6ebe5; border-bottom: 1px solid #e6ebe5; padding: 0 5px; }
 
 .item__novelty { position: absolute; right: 0; top: 0; }
 
-.item__image { display: block; text-align: center; max-width: 75%; margin: 0 auto; }
+.item__image { display: block; text-align: center; max-width: 75%; margin: 0 auto; flex: 1; }
 
 .item__image img { max-width: 100%; object-fit: contain; }
 
-.item__name { display: inline-block; color: #2b2a29; font-size: 18px; text-decoration: underline; margin: 30px 0 10px 0; }
+.item__description-box { min-height: 130px; display: flex; flex-flow: column; }
 
-.item__mini-description { color: #727272; font-size: 15px; margin: 20px 0; }
+.item__name { display: flex; flex: 1; color: #2b2a29; font-size: 18px; text-decoration: underline; margin: 10px 0 10px 0; }
+
+.products .item__price { display: flex; flex: 1; font-size: 16px; color: black; margin: 5px 0 0 0; }
+
+.item p { color: #727272; font-size: 15px; margin: 15px 0 10px 0; }

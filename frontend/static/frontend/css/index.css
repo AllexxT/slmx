@@ -4,7 +4,7 @@
 
 .catalog { display: flex; flex-wrap: wrap; }
 
-.catalog__item { flex: 0 1 344.8px; display: flex; flex-flow: column; align-items: center; padding: 30px 0; border-right: 3px solid #e6ebe5; border-bottom: 3px solid #e6ebe5; }
+.catalog__item { flex: 0 1 344.9px; display: flex; flex-flow: column; align-items: center; padding: 30px 0; border-right: 3px solid #e6ebe5; border-bottom: 3px solid #e6ebe5; justify-content: space-between; }
 
 .catalog__item-image { display: block; width: 180px; }
 
@@ -12,4 +12,4 @@
 
 .catalog__item-title { max-width: 230px; text-align: center; }
 
-.catalog__item-title h2 { font-size: 18px; font-style: italic; text-transform: uppercase; line-height: 25px; }
+.catalog__item-title h2 { font-size: 18px; font-style: italic; text-transform: uppercase; line-height: 35px; }

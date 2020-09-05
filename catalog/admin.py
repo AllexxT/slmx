@@ -1,40 +1,25 @@
 from django.contrib import admin
 
 from catalog.models import (
-    Category, Page, Product, Benefits, Specific
+    Category, Product, Benefits, Specific
 )
-
-
-@admin.register(Page)
-class PageAdmin(admin.ModelAdmin):
-    fields = (
-        'page',
-        'readableTitle',
-        'title',
-        'description',
-        'keywords',
-        'body',
-    )
-    list_display = (
-        'page',
-        'readableTitle',
-        'title',
-        'description',
-        'keywordsLength',
-        'body',
-    )
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+
     fields = (
-        '_category',
-        'categoryImage'
+        'categoryName',
+        'slugUrl',
+        'categoryImage',
     )
+
     list_display = (
-        '_category',
+        'categoryName',
+        'slugUrl',
         'categoryImage'
     )
+    # radio_fields = {"_category": admin.HORIZONTAL}
 
 
 @admin.register(Product)
@@ -52,13 +37,25 @@ class ProductAdmin(admin.ModelAdmin):
     fields = (
         'name',
         'category',
-        'position',
+        ('price',
+        'position'),
+        'title',
         'seoDescription',
         'seoKeywords',
         'description',
         'productImage',
+        ('discount',
+        'sertificate',)
     )
-    list_display = (
+    list_display = (        
         'name',
-        'description',
+        'price',
+        'discount',
+        'sertificate',
+        'category',
+        'position',
+        'seoInfo'
     )
+    list_filter = ('category',)
+    search_fields = ['name']
+    save_on_top = True

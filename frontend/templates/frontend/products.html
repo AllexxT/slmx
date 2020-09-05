@@ -13,45 +13,30 @@ Body
 {% endcomment %}
 {% block content %}
 <div class="title">
-    <h1>{{ title }}</h1>
+    <h1>{{ products.0.category}}</h1>
 </div>
 <ul class="products">
+    {% for item in products %}
     <li class="item">
-        <img class="item__novelty" src="{% static 'frontend/images/novelty_label.png' %}" alt="">
-        <a href="" class="item__image">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
+        {% if item.discount %}
+        <img class="item__novelty" src="{% static 'frontend/images/skidka.png' %}" alt="">
+        {% endif %}
+        <a href="{{ item.get_absolute_url }}{{ item.slug }}" class="item__image">
+            <img src="
+                    {% if item.productImage %}
+            /media/{{ item.productImage }}
+            {% else %}
+            {% static 'frontend/images/placeholder.png' %}
+            {% endif %}" alt="{{ item.name }} - Silmix">
         </a>
-        <a href="" class="item__name">Название товара</a>
-        <p class="item__mini-description">Небольшое описание товара</p>
+        <div class='item__description-box'>
+            <a href="{{ item.get_absolute_url }}{{ item.slug }}" class="item__name">{{ item.name }}</a>
+            {% if item.price %}
+            <p class="item__price">{{ item.price|floatformat:'-2' }} грн.</p>
+            {% endif %}
+            {{ item.description|truncatechars_html:65|safe}}
+        </div>
     </li>
-    <li class="item">
-        <a href="" class="item__image">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
-        </a>
-        <a href="" class="item__name">Название товара</a>
-        <p class="item__mini-description">Небольшое описание товара</p>
-    </li>
-    <li class="item">
-        <a href="" class="item__image">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
-        </a>
-        <a href="" class="item__name">Название товара</a>
-        <p class="item__mini-description">Небольшое описание товара</p>
-    </li>
-    <li class="item">
-        <a href="" class="item__image">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
-        </a>
-        <a href="" class="item__name">Название товара</a>
-        <p class="item__mini-description">Небольшое описание товара</p>
-    </li>
-    <li class="item">
-        <a href="" class="item__image">
-            <img src="{% static 'frontend/images/item.webp' %}" alt="">
-        </a>
-        <a href="" class="item__name">Название товара</a>
-        <p class="item__mini-description">Небольшое описание товара</p>
-    </li>
-
+    {% endfor %}
 </ul>
 {% endblock content %}
