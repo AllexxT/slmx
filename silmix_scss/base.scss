@@ -29,7 +29,9 @@ body {
     }
     footer {
         width: 100%;
-        min-height: 150px;
+        background: $BACK-BACKGROUND;
+        border-top: 6px solid $BACK-BACKGROUND;
+        padding-bottom: 30px;
     }
 }
 %container {
@@ -157,4 +159,55 @@ body {
         font-size: 31px;
         font-weight: 100;
     }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+
+    &__logo {
+        display: flex;
+        flex: 0 1 200px;
+        overflow: hidden;
+        flex-flow: wrap;
+        align-content: flex-start;
+        img {
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        small {
+            color: #727272;
+        }
+    }
+
+    &__logo-container {
+        display: flex;
+    }
+
+    &__links {
+        & li {
+            line-height: 25px;
+        }
+        & p {
+            font-size: 16px;
+            font-weight: 700;
+            color: #636466;
+            line-height: 25px;
+            padding-bottom: 5px;
+        }
+        & a {
+            color: #727272;
+            line-height: 18px;
+            &:hover {
+                color: red;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.menu-active {
+    color: red;
 }

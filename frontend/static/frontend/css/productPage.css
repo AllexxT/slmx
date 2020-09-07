@@ -7,7 +7,7 @@
 
 .product__image img { width: 100%; object-fit: contain; }
 
-.product__info { overflow: hidden; position: relative; height: 427px; margin-top: 8px; padding-left: 25px; max-width: 400px; }
+.product__info { overflow: hidden; position: relative; height: 350px; margin-top: 8px; padding-left: 25px; max-width: 400px; }
 
 .benefits { display: flex; flex-flow: column; width: 115%; }
 

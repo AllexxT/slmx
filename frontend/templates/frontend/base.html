@@ -22,19 +22,21 @@
                     <div class="header__logo"><img src="{% static 'frontend/images/Logo.jpg' %}" alt="Silmix"></div>
                     <div class="contacts">
                         <div class="contacts__items">
-                            <div class="contacts__item">+380634566205</div>
-                            <div class="contacts__item">+380634566205</div>
+                            <div class="contacts__item">+380631234567</div>
+                            <div class="contacts__item">+380631234567</div>
                             <div class="contacts__item">silmix@gmail.com</div>
                         </div>
                     </div>
                 </div>
             </div>
             <ol class="top-menu">
-                <li class="top-menu__item"><a href="{% url 'about' %}" class="top-menu__link">О КОМПАНИИ</a></li>
-                <li class="top-menu__item"><a href="/" class="top-menu__link">Продукция</a></li>
-                <li class="top-menu__item"><a href="{% url 'useful_info' %}" class="top-menu__link">Полезная информация</a></li>
-                <li class="top-menu__item"><a href="{% url 'sertificates' %}" class="top-menu__link">Сертификаты</a></li>
-                <li class="top-menu__item"><a href="{% url 'our_works' %}" class="top-menu__link">Наши работы</a></li>
+                <li class="top-menu__item"><a href="{% url 'about' %}" class="top-menu__link {% if about %}menu-active{% endif %}">О КОМПАНИИ</a></li>
+                <li class="top-menu__item"><a href="/" class="top-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
+                <li class="top-menu__item"><a href="{% url 'useful_info' %}" class="top-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная
+                        информация</a></li>
+                <li class="top-menu__item"><a href="{% url 'sertificates' %}" class="top-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a>
+                </li>
+                <li class="top-menu__item"><a href="{% url 'our_works' %}" class="top-menu__link {% if ourWorks %}menu-active{% endif %}">Наши работы</a></li>
             </ol>
         </header>
         <main>
@@ -42,12 +44,17 @@
                 <div class="body-container">
                     <div class="body-wrapper">
                         <ol class="side-menu">
-                            <li class="side-menu__item"><a href="{% url 'about' %}" class="side-menu__link">О КОМПАНИИ</a></li>
-                            <li class="side-menu__item"><a href="/" class="side-menu__link">Продукция</a></li>
-                            <li class="side-menu__item"><a href="{% url 'useful_info' %}" class="side-menu__link">Полезная информация</a></li>
-                            <li class="side-menu__item"><a href="{% url 'sertificates' %}" class="side-menu__link">Сертификаты</a></li>
-                            <li class="side-menu__item"><a href="{% url 'our_works' %}" class="side-menu__link">Наши работы</a></li>
-                            <li class="side-menu__item"><a href="{% url 'contacts' %}" class="side-menu__link">Контакты</a></li>
+                            <li class="side-menu__item"><a href="{% url 'about' %}" class="side-menu__link {% if about %}menu-active{% endif %}">О
+                                    КОМПАНИИ</a></li>
+                            <li class="side-menu__item"><a href="/" class="side-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
+                            <li class="side-menu__item"><a href="{% url 'useful_info' %}"
+                                    class="side-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная информация</a></li>
+                            <li class="side-menu__item"><a href="{% url 'sertificates' %}"
+                                    class="side-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a></li>
+                            <li class="side-menu__item"><a href="{% url 'our_works' %}" class="side-menu__link {% if ourWorks %}menu-active{% endif %} ">Наши
+                                    работы</a></li>
+                            <li class="side-menu__item"><a href="{% url 'contacts' %}"
+                                    class="side-menu__link {% if contacts %}menu-active{% endif %}">Контакты</a></li>
                         </ol>
                         <div class="main-content">
                             {% block content %}
@@ -59,7 +66,34 @@
             </div>
         </main>
         <footer>
-            <div class="container"></div>
+            <div class="container">
+                <div class="footer">
+                    <div class="footer__logo">
+                        <div class="footer__logo-container"><img src="{% static 'frontend/images/Logo_t.png' %}" alt="Silmix"></div>
+                        <small>© SILMIX 2020 Все права защищены</small>
+                    </div>
+                    <div class="footer__links">
+                        <p>Рекомендуемые разделы</p>
+                        <ul>
+                            <li><a href="{% url 'uteplenie' %}">Смеси для утепления</a></li>
+                            <li><a href="{% url 'pol' %}">Смеси для пола</a></li>
+                            <li><a href="{% url 'kladka' %}">Кладочные смеси</a></li>
+                            <li><a href="{% url 'oblicovka' %}">Смеси для облицовки</a></li>
+                            <li><a href="{% url 'shtukaturka' %}">Штукатурные смеси</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__links">
+                        <p>Информация</p>
+                        <ul>
+                            <li><a href="{% url 'sertificates' %}">Сертификаты</a></li>
+                            <li><a href="{% url 'our_works' %}">Наши работы</a></li>
+                            <li><a href="{% url 'useful_info' %}">Полезная информация</a></li>
+                            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+                            <li><a href="{% url 'about' %}">О компании</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

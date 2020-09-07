@@ -5,7 +5,8 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
-<meta name="description" content="{{ product.seoDescription }}">
+<meta name="description" content="{{ content.description }}">
+<meta name="keywords" content="{{ content.keywords }}">
 {% endblock meta %}
 <title>
     {% block title %}

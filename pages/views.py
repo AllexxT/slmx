@@ -2,14 +2,17 @@ from django.shortcuts import render
 from django.template import loader
 from pages.models import Page
 
+
 def sertificates(request):
     content = Page.objects.get(page='sertifikaty')
     return render(
         request, 'frontend/sertificates.html',
         {
             'content': content,
+            'sertificates': True,
         }
     )
+
 
 def our_works(request):
     content = Page.objects.get(page='nashi-raboty')
@@ -17,8 +20,10 @@ def our_works(request):
         request, 'frontend/our_works.html',
         {
             'content': content,
+            'ourWorks': True,
         }
     )
+
 
 def about(request):
     content = Page.objects.get(page='o-kompanii')
@@ -26,8 +31,10 @@ def about(request):
         request, 'frontend/about.html',
         {
             'content': content,
+            'about': True,
         }
     )
+
 
 def contacts(request):
     content = Page.objects.get(page='kontakty')
@@ -35,8 +42,10 @@ def contacts(request):
         request, 'frontend/contacts.html',
         {
             'content': content,
+            'contacts': True,
         }
     )
+
 
 def useful_info(request):
     content = Page.objects.get(page='poleznaya-informaciya')
@@ -44,5 +53,6 @@ def useful_info(request):
         request, 'frontend/useful_info.html',
         {
             'content': content,
+            'usefInfo': True,
         }
     )

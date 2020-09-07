@@ -107,7 +107,7 @@ Body
     let table = document.getElementsByClassName('specific__table')[0]
 
     let tableInfoStyles = window.getComputedStyle(table)
-    if (parseInt(tableInfoStyles.height) < 255) readMore.remove();
+    if (parseInt(tableInfoStyles.height) < 210) readMore.remove();
 
     function readMoreToggler() {
         if (productInfo.className.includes('opened')) {

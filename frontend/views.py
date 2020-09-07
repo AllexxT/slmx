@@ -15,7 +15,8 @@ def index(request):
         request, 'frontend/index.html',
         {
             'content': content,
-            'categories': categories
+            'categories': categories,
+            'index': True,
         }
     )
 
@@ -25,7 +26,7 @@ def forWarming(request):
     content = Page.objects.get(page='smesi-dlya-utepleniya')
 
     return render(request, 'frontend/products.html', {
-        'title': len(products),
+        'index': True,
         'content': content,
         'products': products
     })
@@ -35,7 +36,7 @@ def forFloor(request):
     content = Page.objects.get(page='smesi-dlya-pola')
 
     return render(request, 'frontend/products.html', {
-        'title': '',
+        'index': True,
         'content': content,
         'products': products
     })
@@ -45,7 +46,7 @@ def forMasonry(request):
     content = Page.objects.get(page='kladochnye-smesi')
 
     return render(request, 'frontend/products.html', {
-        'title': '',
+        'index': True,
         'content': content,
         'products': products
     })
@@ -55,7 +56,7 @@ def forCladding(request):
     content = Page.objects.get(page='smesi-dlya-oblicovki')
 
     return render(request, 'frontend/products.html', {
-        'title': '',
+        'index': True,
         'content': content,
         'products': products
     })
@@ -65,7 +66,7 @@ def forPlaster(request):
     content = Page.objects.get(page='shtukaturnye-smesi')
 
     return render(request, 'frontend/products.html', {
-        'title': '',
+        'index': True,
         'content': content,
         'products': products
     })
@@ -76,5 +77,6 @@ def forPlaster(request):
 def productPage(request, slug):
     product = Product.objects.get(slug=slug)
     return render(request, 'frontend/productPage.html', {
-        'product': product
+        'product': product,
+        'index': True,
     })
