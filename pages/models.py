@@ -1,12 +1,17 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from versatileimagefield.fields import VersatileImageField, PPOIField
+from catalog.models import Category
 
 
 class InPageImages(models.Model):
     page = models.ForeignKey(
         "Page", verbose_name='Страница', on_delete=models.CASCADE,
-        null=True, default='/static/frontend/images/placeholder.png'
+        null=True
+    )
+    ourWorks = models.ForeignKey(
+        "OurWorks", verbose_name='Наши работы', on_delete=models.CASCADE,
+        null=True
     )
     imageName = models.CharField('Название', max_length=50)
     categoryImage = VersatileImageField(
@@ -68,3 +73,25 @@ class Page(models.Model):
     class Meta:
         verbose_name_plural = 'Страницы и СЕО'
         verbose_name = 'Страницу СЕО'
+
+
+class OurWorks(models.Model):
+    title = models.CharField('Заголовок', max_length=150, blank=True, null=True)
+    address = models.CharField('Адрес', max_length=100, blank=True, null=True)
+    description = RichTextField(blank=True, null=True)
+    
+    CHOICES = (
+        ('ALL', 'Без категории'),
+        *Category.CATEGORIES,
+    )
+    
+    category = models.CharField('Категория', max_length=10, null=True,
+                                choices=CHOICES, default=CHOICES[0][0])
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name_plural = 'Галерея наших работ'
+        verbose_name = 'Фото наших работ'
+        

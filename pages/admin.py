@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 from pages.models import (
-    Page, InPageImages, InPageFiles
+    Page, InPageImages, InPageFiles, InPageImages, OurWorks
 )
 from silmix.settings import DEBUG
 # import pprint
@@ -36,6 +36,8 @@ class PageAdmin(admin.ModelAdmin):
         if DEBUG == False:
             formset = PageFormSet
             readonly_fields = ('imageName',)
+        exclude = ('ourWorks',)
+
     class FilesInline(admin.TabularInline):
         model = InPageFiles
         extra = 0
@@ -64,6 +66,30 @@ class PageAdmin(admin.ModelAdmin):
         readonly_fields = ('page',)
 
 
+@admin.register(OurWorks)
+class OurWorksAdmin(admin.ModelAdmin):
+
+    class ImagesInline(admin.TabularInline):
+        model = InPageImages
+        extra = 0
+        exclude = ('page',)
+
+    inlines = [ImagesInline, ]
+    list_filter = ('category',)
+
+    fields = (
+        'category',
+        'title',
+        'address',
+        'description',
+    )
+    list_display = (
+        'category',
+        'title',
+        'address',
+    )
+
+
 # pages = [
 #     'index', 'o-kompanii', 'products', 'poleznaya-informaciya',
 #     'sertifikaty', 'nashi-raboty', 'kontakty',
@@ -73,7 +99,7 @@ class PageAdmin(admin.ModelAdmin):
 # ]
 
 # categorii_url = [
-#     'smesi-dlya-utepleniya/',	
+#     'smesi-dlya-utepleniya/',
 # 	'shtukaturnye-smesi/',
 # 	'smesi-dlya-pola/',
 # 	'smesi-dlya-oblicovki/',

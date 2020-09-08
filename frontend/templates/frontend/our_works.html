@@ -5,6 +5,17 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/css/our_works.css' %}">
+
+<script type="text/javascript" src="{% static 'frontend/ad-gallery/jquery-1.8.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/ad-gallery/jquery.ad-gallery.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/ad-gallery/jquery.ad-gallery.css' %}" />
+<script type="text/javascript">
+    $(function () {
+        var galleries = $('.ad-gallery').adGallery();
+    });
+</script>
+
 <meta name="description" content="{{ content.description }}">
 <meta name="keywords" content="{{ content.keywords }}">
 {% endblock meta %}
@@ -23,6 +34,20 @@ Body
 {% block content %}
 <div class="title">
     <h1>{{ content.readableTitle }}</h1>
+</div>
+<div id="ad-gallery" class="ad-gallery">
+    <div class="ad-image-wrapper"> </div>
+    <div class="ad-controls"> </div>
+    <div class="ad-nav">
+        <div class="ad-thumbs">
+            <ul class="ad-thumb-list">
+            {% for item in galleries.0.inpageimages_set.all %}
+                <li> <a href="/media/{{ item.categoryImage }}"> <img src="{{ item.categoryImage.thumbnail.160x107 }}" width="160" height="107" /> </a> </li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

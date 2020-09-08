@@ -22,7 +22,6 @@ class Category(models.Model):
     categoryName = models.CharField(
         'Название категории', max_length=2,
         choices=CATEGORIES, primary_key=True,
-        default='/static/frontend/images/placeholder.png'
     )
     slugUrl = models.CharField(
         'Адрес страницы', max_length=200, null=True,

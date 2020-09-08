@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from pages.models import Page
+from pages.models import Page, OurWorks
 
 
 def sertificates(request):
@@ -16,11 +16,13 @@ def sertificates(request):
 
 def our_works(request):
     content = Page.objects.get(page='nashi-raboty')
+    galleries = OurWorks.objects.all()
     return render(
         request, 'frontend/our_works.html',
         {
             'content': content,
             'ourWorks': True,
+            'galleries': galleries,
         }
     )
 
