@@ -1,7 +1,51 @@
 @import "constants.scss";
 
+.our-works {
+    display: flex;
+    padding-bottom: 40px;
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    &__gallery {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        max-width: 700px;
+    }
+    & .g-description {
+        background: $BACK-BACKGROUND;
+        // margin-bottom: 20px;
+        padding: 20px 10px;
+        position: relative;
+        &__wrapper {
+        }
 
-.slider {
-    border: 1px solid black;
-    display: block;
+        &__title {
+            & h2 {
+                color: #2b2a29;
+                font-size: 26px;
+                font-weight: normal;
+                line-height: 30px;
+                margin: 0 0 15px 0;
+            }
+        }
+
+        &__address {
+            color: #727272;
+            font-size: 15px;
+        }
+
+        &__address-text {
+            color: #909090;
+            font-size: 15px;
+            font-style: italic;
+            line-height: 19px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    }
 }

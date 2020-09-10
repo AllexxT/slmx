@@ -76,6 +76,7 @@ class OurWorksAdmin(admin.ModelAdmin):
 
     inlines = [ImagesInline, ]
     list_filter = ('category',)
+    save_on_top = True
 
     fields = (
         'category',

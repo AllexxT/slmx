@@ -1,6 +1,10 @@
 .catalog { display: flex; flex-wrap: wrap; }
 
-.catalog__item { flex: 0 1 344.9px; display: flex; flex-flow: column; align-items: center; padding: 30px 0; border-right: 3px solid #e6ebe5; border-bottom: 3px solid #e6ebe5; justify-content: space-between; }
+.catalog__item { flex: 0 1 33.333%; display: flex; flex-flow: column; align-items: center; padding: 30px 0; border-right: 3px solid #e6ebe5; border-bottom: 3px solid #e6ebe5; justify-content: space-between; }
+
+@media (max-width: 550px) { .catalog__item { flex: 0 1 50%; } }
+
+@media (max-width: 365px) { .catalog__item { flex: 0 1 100%; } }
 
 .catalog__item-image { display: block; width: 180px; }
 

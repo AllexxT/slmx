@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.template import loader
+from django.http import JsonResponse
+from django.templatetags.static import static
 from pages.models import Page, OurWorks
 
 
@@ -15,8 +17,13 @@ def sertificates(request):
 
 
 def our_works(request):
+    print(request.GET)
     content = Page.objects.get(page='nashi-raboty')
     galleries = OurWorks.objects.all()
+    if len(request.GET) > 0:
+        return JsonResponse({
+            
+        })
     return render(
         request, 'frontend/our_works.html',
         {

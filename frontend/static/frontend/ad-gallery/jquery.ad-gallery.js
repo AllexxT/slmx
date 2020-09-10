@@ -17,7 +17,7 @@
                      animate_first_image: false,
                      animation_speed: 300,
                      width: false,
-                     height: 300,
+                     height: 350,
                      display_next_and_prev: true,
                      display_back_and_forward: true,
                      scroll_jump: 0, // If 0, it jumps the width of the container
@@ -596,7 +596,7 @@
   	    image_width = this.image_wrapper_width;
   	    image_height = this.image_wrapper_width * ratio;
   	  };
-      return {width: image_width, height: image_height};
+      return {width: image_width, height: image_height}; /* MY */
     },
     /**
      * If the image dimensions are smaller than the wrapper, we position
@@ -791,7 +791,7 @@
             img.load(
               function() {
                 image.preloaded = true;
-                image.size = { width: this.width, height: this.height };
+                // image.size = { width: this.width, height: this.height };  /* MY */
                 context.fireCallback(callback);
               }
             ).error(
@@ -803,7 +803,7 @@
             );
           } else {
             image.preloaded = true;
-            image.size = { width: img[0].width, height: img[0].height };
+            // image.size = { width: img[0].width, height: img[0].height }; /* MY */
             this.fireCallback(callback);
           };
         } else {

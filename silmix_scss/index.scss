@@ -1,50 +1,55 @@
-@import 'constants.scss';
+@import "constants.scss";
 
 .catalog {
     display: flex;
     flex-wrap: wrap;
 
-		// .catalog__item
+    // .catalog__item
 
-		&__item {
-            // width: 350px;
-            flex: 0 1 344.9px;
-            // border: 1px solid green;
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            padding: 30px 0;
-            border-right: 3px solid $BACK-BACKGROUND;
-            border-bottom: 3px solid $BACK-BACKGROUND;
-            justify-content: space-between;
-		}
+    &__item {
+        // width: 350px;
+        flex: 0 1 33.333%;
+        // border: 1px solid green;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 30px 0;
+        border-right: 3px solid $BACK-BACKGROUND;
+        border-bottom: 3px solid $BACK-BACKGROUND;
+        justify-content: space-between;
+        @media (max-width: 550px) {
+            flex: 0 1 50%;
+        }
+        @media (max-width: 365px) {
+            flex: 0 1 100%;
+        }
+    }
 
-		// .catalog__item-image
+    // .catalog__item-image
 
-		&__item-image {
-            display: block;
-            width: 180px;
-            img {
-                object-fit: contain;
-                width: 100%;
+    &__item-image {
+        display: block;
+        width: 180px;
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+
+    // .catalog__item-title
+
+    &__item-title {
+        max-width: 230px;
+        text-align: center;
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 35px;
+            color: black;
+            a {
+                color: inherit;
             }
-		}
-
-		// .catalog__item-title
-
-		&__item-title {
-            max-width: 230px;
-            text-align: center;
-            h2 {
-                font-size: 20px;
-                font-weight: bold;
-                font-style: italic;
-                line-height: 35px;
-                color: black;
-                a {
-                    color: inherit;
-                }
-            }
-		}
+        }
+    }
 }
-

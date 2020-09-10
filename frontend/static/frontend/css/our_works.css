@@ -1,1 +1,13 @@
-.slider { border: 1px solid black; display: block; }
+.our-works { display: flex; padding-bottom: 40px; }
+
+.our-works p { display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; }
+
+.our-works__gallery { position: relative; display: flex; flex: 1 1 auto; max-width: 700px; }
+
+.our-works .g-description { background: #e6ebe5; padding: 20px 10px; position: relative; }
+
+.our-works .g-description__title h2 { color: #2b2a29; font-size: 26px; font-weight: normal; line-height: 30px; margin: 0 0 15px 0; }
+
+.our-works .g-description__address { color: #727272; font-size: 15px; }
+
+.our-works .g-description__address-text { color: #909090; font-size: 15px; font-style: italic; line-height: 19px; margin-top: 10px; margin-bottom: 0; }
