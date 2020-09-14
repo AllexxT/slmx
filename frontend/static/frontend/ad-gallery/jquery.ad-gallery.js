@@ -17,7 +17,7 @@
                      animate_first_image: false,
                      animation_speed: 300,
                      width: false,
-                     height: 350,
+                     height: false,
                      display_next_and_prev: true,
                      display_back_and_forward: true,
                      scroll_jump: 0, // If 0, it jumps the width of the container
@@ -33,7 +33,7 @@
                        onStart: false,
                        onStop: false
                      },
-                     effect: 'fade', //  'slide-vert', 'fade',  'resize', 'none','slide-hori'
+                     effect: 'none', //  'slide-vert', 'fade',  'resize', 'none','slide-hori'
                      enable_keyboard_move: true,
                      cycle: true,
                      hooks: {
@@ -791,7 +791,7 @@
             img.load(
               function() {
                 image.preloaded = true;
-                // image.size = { width: this.width, height: this.height };  /* MY */
+                image.size = { width: this.width, height: this.height };  /* MY */
                 context.fireCallback(callback);
               }
             ).error(
@@ -803,7 +803,7 @@
             );
           } else {
             image.preloaded = true;
-            // image.size = { width: img[0].width, height: img[0].height }; /* MY */
+            image.size = { width: img[0].width, height: img[0].height }; /* MY */
             this.fireCallback(callback);
           };
         } else {

@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'frontend/css/base.css' %}">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
     {% block meta %}
     {% endblock meta %}
     <title>{% block title %} SILMIX
@@ -13,7 +17,8 @@
 </head>
 
 <body>
-    <div class="mobile-nav"></div>
+    <script src="{% static 'frontend/js/navIndex.jsx' %}" type="text/babel"></script>
+    <div id="mobile-nav" class="mobile-nav"></div>
     <div class="site-section">
         <header>
             <div class="container">
@@ -29,29 +34,43 @@
                     </div>
                 </div>
             </div>
-            <ol class="top-menu">
-                <li class="top-menu__item"><a href="{% url 'about' %}" class="top-menu__link {% if about %}menu-active{% endif %}">О КОМПАНИИ</a></li>
-                <li class="top-menu__item"><a href="/" class="top-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
-                <li class="top-menu__item"><a href="{% url 'useful_info' %}" class="top-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная
-                        информация</a></li>
-                <li class="top-menu__item"><a href="{% url 'sertificates' %}" class="top-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a>
-                </li>
-                <li class="top-menu__item"><a href="{% url 'our_works' %}" class="top-menu__link {% if ourWorks %}menu-active{% endif %}">Наши работы</a></li>
-            </ol>
+            <div class="top-menu">
+                <div id="burger-wrapper" class="burger-wrapper">
+                </div>
+                <ol class="top-menu__list">
+                    <li class="top-menu__item"><a href="{% url 'about' %}"
+                            class="top-menu__link {% if about %}menu-active{% endif %}">О КОМПАНИИ</a></li>
+                    <li class="top-menu__item"><a href="/"
+                            class="top-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
+                    <li class="top-menu__item"><a href="{% url 'useful_info' %}"
+                            class="top-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная
+                            информация</a></li>
+                    <li class="top-menu__item"><a href="{% url 'sertificates' %}"
+                            class="top-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a>
+                    </li>
+                    <li class="top-menu__item"><a href="{% url 'our_works' %}"
+                            class="top-menu__link {% if ourWorks %}menu-active{% endif %}">Наши работы</a></li>
+                </ol>
+            </div>
         </header>
         <main>
             <div class="content">
                 <div class="body-container">
                     <div class="body-wrapper">
                         <ol class="side-menu">
-                            <li class="side-menu__item"><a href="{% url 'about' %}" class="side-menu__link {% if about %}menu-active{% endif %}">О
+                            <li class="side-menu__item"><a href="{% url 'about' %}"
+                                    class="side-menu__link {% if about %}menu-active{% endif %}">О
                                     КОМПАНИИ</a></li>
-                            <li class="side-menu__item"><a href="/" class="side-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
+                            <li class="side-menu__item"><a href="/"
+                                    class="side-menu__link {% if index %}menu-active{% endif %}">Продукция</a></li>
                             <li class="side-menu__item"><a href="{% url 'useful_info' %}"
-                                    class="side-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная информация</a></li>
+                                    class="side-menu__link {% if usefInfo %}menu-active{% endif %}">Полезная
+                                    информация</a></li>
                             <li class="side-menu__item"><a href="{% url 'sertificates' %}"
-                                    class="side-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a></li>
-                            <li class="side-menu__item"><a href="{% url 'our_works' %}" class="side-menu__link {% if ourWorks %}menu-active{% endif %} ">Наши
+                                    class="side-menu__link {% if sertificates %}menu-active{% endif %}">Сертификаты</a>
+                            </li>
+                            <li class="side-menu__item"><a href="{% url 'our_works' %}"
+                                    class="side-menu__link {% if ourWorks %}menu-active{% endif %} ">Наши
                                     работы</a></li>
                             <li class="side-menu__item"><a href="{% url 'contacts' %}"
                                     class="side-menu__link {% if contacts %}menu-active{% endif %}">Контакты</a></li>
@@ -69,7 +88,8 @@
             <div class="container">
                 <div class="footer">
                     <div class="footer__logo">
-                        <div class="footer__logo-container"><img src="{% static 'frontend/images/Logo_t.png' %}" alt="Silmix"></div>
+                        <div class="footer__logo-container"><img src="{% static 'frontend/images/Logo_t.png' %}"
+                                alt="Silmix"></div>
                         <small>© SILMIX 2020 Все права защищены</small>
                     </div>
                     <div class="footer__links">

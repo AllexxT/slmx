@@ -1,5 +1,6 @@
 @import "./reset.scss";
 @import "./constants.scss";
+@import "./mobile-nav.scss";
 
 html {
     overflow-y: scroll;
@@ -16,7 +17,8 @@ body {
 .site-section {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    transition: all .15s linear;
+
     header {
         width: 100%;
         background: $BLOCK-BACKGROUND;
@@ -92,18 +94,25 @@ body {
 }
 
 .top-menu {
-    list-style-type: none;
     display: flex;
-    // justify-content: center;
     background: $BACK-BACKGROUND;
-    font-weight: bold;
-    overflow-y: scroll;
-
+    min-height: 28px;
+    justify-content: center;
     &__item {
         margin: 5px 10px;
     }
 
-    // .top-menu__link
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        background: $BACK-BACKGROUND;
+        font-weight: bold;
+        overflow-y: scroll;
+        @media (max-width: 800px) {
+            display: none;
+        }
+    }
 
     &__link {
         font-size: 18px;
@@ -113,7 +122,52 @@ body {
             color: red;
         }
     }
+    @media (max-width: 800px) {
+        justify-content: unset;
+    }
 }
+
+.burger-wrapper {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    margin-left: 10px;
+    & .burger {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background: black;
+            width: 100%;
+            left: 0;
+        }
+        &::before {
+            top: 3px;
+        }
+        &::after {
+            bottom: 3px;
+        }
+        & span {
+            position: absolute;
+            background: black;
+            height: 2px;
+            left: 0;
+            width: 100%;
+            top: 47%;
+        }
+    }
+    @media (min-width: 800px) {
+        display: none;
+        justify-content: unset;
+    }
+}
+
 
 .content {
     background: $BLOCK-BACKGROUND;
@@ -174,6 +228,7 @@ body {
 .footer {
     display: flex;
     padding-top: 20px;
+    justify-content: space-around;
     @media (max-width: 585px) {
         flex-flow: wrap-reverse;
     }
@@ -184,19 +239,23 @@ body {
         overflow: hidden;
         flex-flow: wrap;
         align-content: flex-start;
+        // max-height: 100px;
 
         img {
             width: 100%;
             object-fit: contain;
             margin-bottom: 15px;
+            max-height: 100px;
         }
         small {
-            padding-top: 5px;
+            // padding-top: 5px;
             color: #727272;
+            text-align: center;
         }
         @media (max-width: 585px) {
             width: fit-content;
             margin: 0 auto;
+            width: 55%;
             flex-flow: wrap column;
             flex: unset;
             align-content: center;
