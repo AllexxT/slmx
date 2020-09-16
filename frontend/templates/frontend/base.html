@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <script src="{% static 'frontend/js/navIndex.jsx' %}" type="text/babel"></script>
     <div id="mobile-nav" class="mobile-nav"></div>
     <div class="site-section">
         <header>
@@ -36,6 +35,9 @@
             </div>
             <div class="top-menu">
                 <div id="burger-wrapper" class="burger-wrapper">
+                    <div class="burger">
+                        <span></span>
+                    </div>
                 </div>
                 <ol class="top-menu__list">
                     <li class="top-menu__item"><a href="{% url 'about' %}"
@@ -116,6 +118,8 @@
             </div>
         </footer>
     </div>
+    <script src="{% static 'frontend/js/navIndex.jsx' %}" type="text/babel"></script>
+
 </body>
 
 </html>
