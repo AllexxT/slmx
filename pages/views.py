@@ -17,19 +17,42 @@ def sertificates(request):
 
 
 def our_works(request):
-    print(request.GET)
     content = Page.objects.get(page='nashi-raboty')
     galleries = OurWorks.objects.all()
-    if len(request.GET) > 0:
+
+    def showMore(last, nxt):
+        more = galleries[int(last):int(nxt)]
+        moreGallery = []
+        for item in more:
+            print(item)
+            itemDict = {
+                'title': item.title,
+                'address': item.address,
+                'description': item.description,
+                'images': []
+            }
+            for image in item.inpageimages_set.all():
+                itemDict['images'].append({
+                    'image': image.categoryImage.url,
+                    'thumbnail': image.categoryImage.thumbnail['160x107'].url
+                })
+            moreGallery.append(itemDict)                
         return JsonResponse({
-            
+            'more': moreGallery
         })
+
+    if len(request.GET) > 0:
+        print(request.GET)
+        if 'nxt' in request.GET:
+            [last, nxt] = request.GET['last'][0], request.GET['nxt'][0]
+            return showMore(last, nxt)
+
     return render(
         request, 'frontend/our_works.html',
         {
             'content': content,
             'ourWorks': True,
-            'galleries': galleries,
+            'galleries': galleries[0:2],
         }
     )
 

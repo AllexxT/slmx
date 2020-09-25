@@ -90,6 +90,15 @@ Body
         </div>
         <div class="read-more"><span>Все характеристики</span></div>
     </div>
+    <div class="product__price">
+    <span>
+    {% if product.price %}
+    {{ product.price|floatformat:'-2' }} грн.
+    {% else %}
+    <a style="text-decoration: underline" href="tel:+380631234567">Уточнить цену в офисе </a>
+    {% endif %}
+    </span>
+    </div>
 </div>
 <div class="description">
     <div class="description__row">

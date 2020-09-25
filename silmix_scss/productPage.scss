@@ -21,6 +21,24 @@
         }
     }
 
+    &__price {
+        display: flex;
+        flex: 1;
+        margin: auto;
+        justify-content: center;
+        span {
+            padding: 10px 0 10px 5px; 
+            color: #6f6f6f;
+            font-size: 25px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            position: relative;
+            a:hover {
+                text-decoration: none !important;
+            }
+        }
+    }
+
     &__info {
         overflow: hidden;
         position: relative;

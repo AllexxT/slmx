@@ -36,3 +36,5 @@
 .mobile-nav__inner .mobile-subnav .mobile-nav__title { font-size: 16px; color: #797979; font-family: oswald; }
 
 .mobile-subnav .mobile-nav__item { border-bottom: 1px solid #343434; color: #fff; font-family: oswald; font-size: 13px; }
+
+.mobile-subnav .mobile-nav__item a { display: block; }

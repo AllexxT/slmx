@@ -109,7 +109,6 @@ body {
         justify-content: center;
         background: $BACK-BACKGROUND;
         font-weight: bold;
-        overflow-y: scroll;
         @media (max-width: 800px) {
             display: none;
         }
@@ -212,6 +211,7 @@ body {
     display: flex;
     flex-flow: column;
     width: 100%;
+    min-height: 55vh;
 }
 
 .title {
@@ -301,6 +301,6 @@ body {
     }
 }
 
-.menu-active {
+a.menu-active {
     color: red;
 }

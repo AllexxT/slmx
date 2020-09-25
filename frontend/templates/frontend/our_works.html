@@ -16,21 +16,11 @@ Head
     crossorigin="anonymous"></script>
 
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/ad-gallery/jquery.ad-gallery.css' %}" />
+
 <script type="text/javascript">
     $(function () {
         var galleries = $('.ad-gallery').adGallery();
     });
-</script>
-<script>
-    axios.get('', {
-            params: {
-                kek: 'lol? or not?'
-            }
-        })
-        .then((response) => {
-            console.log(response)
-        })
-        .catch((error) => console.log(error))
 </script>
 
 <meta name="description" content="{{ content.description }}">
@@ -84,6 +74,9 @@ Body
     </div>
 </div>
 {% endfor %}
+<div id="more"></div>
+<script src="{% static 'frontend/js/our_works__more.jsx' %}" type="text/babel"></script>
+
 <script>
     // RELOADS WEBPAGE WHEN MOBILE ORIENTATION CHANGES  
     window.onorientationchange = function () {

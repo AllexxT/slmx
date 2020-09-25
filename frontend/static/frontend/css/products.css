@@ -14,10 +14,10 @@
 
 .item__image img { max-width: 100%; object-fit: contain; }
 
-.item__description-box { min-height: 130px; display: flex; flex-flow: column; }
+.item__description-box { min-height: 105px; display: flex; flex-flow: column; }
 
-.item__name { display: flex; flex: 1 0 auto; color: #2b2a29; font-size: 18px; text-decoration: underline; margin: 0 0 10px 0; }
+.item__name { display: flex; flex: 1 0 auto; color: #2b2a29; font-size: 18px; text-decoration: underline; margin: 5px 0 10px 0; }
 
 .products .item__price { display: flex; flex: 1 0 auto; font-size: 16px; color: black; margin: 5px 0 0 0; }
 
-.item p { color: #727272; font-size: 15px; margin: 15px 0 10px 0; }
+.item p { color: #727272; font-size: 15px; margin: 8px 0 10px 0; }

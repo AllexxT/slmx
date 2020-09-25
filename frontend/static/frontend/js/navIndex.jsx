@@ -68,6 +68,7 @@ const MobileNav = ({ links }) => {
   const nav = document.getElementsByClassName("mobile-nav")[0];
   const site = document.getElementsByClassName("site-section")[0];
   const body = document.body;
+
   const menuOff = () => {
     nav.className = "mobile-nav";
     site.className = "site-section";
@@ -75,10 +76,10 @@ const MobileNav = ({ links }) => {
       capture: true,
       passive: true,
     });
-    setSubmenu(false);
     toggleSubmenu("0");
     setTimeout(() => (body.style.overflow = "scroll"), 200);
   };
+
   const burgerClick = () => {
     body.style.overflow = "hidden";
     nav.className += " nav-open";

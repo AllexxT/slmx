@@ -34,8 +34,6 @@
         top: 0;
     }
 
-    // .item__image
-
     &__image {
         display: flex;
         text-align: center;
@@ -50,7 +48,7 @@
     }
 
     &__description-box {
-        min-height: 130px;
+        min-height: 105px;
         display:flex;
         flex-flow: column;
     }
@@ -63,7 +61,7 @@
         color: #2b2a29;
         font-size: 18px;
         text-decoration: underline;
-        margin: 0 0 10px 0;
+        margin: 5px 0 10px 0;
     }
 
     .products &__price {
@@ -79,6 +77,6 @@
     p {
         color: #727272;
         font-size: 15px;
-        margin: 15px 0 10px 0;
+        margin: 8px 0 10px 0;
     }
 }

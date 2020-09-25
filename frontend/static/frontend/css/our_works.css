@@ -10,7 +10,7 @@
 
 @media (max-width: 1000px) { .our-works__gallery { max-width: unset; width: 100%; } }
 
-.our-works .g-description { background: #e6ebe5; padding: 20px 10px; position: relative; height: fit-content; max-width: 30%; }
+.our-works .g-description { background: #e6ebe5; padding: 20px 10px; position: relative; height: fit-content; max-width: 33%; }
 
 .our-works .g-description__title h2 { color: #2b2a29; font-size: 26px; font-weight: normal; line-height: 30px; margin: 0 0 15px 0; }
 
