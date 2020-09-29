@@ -2,9 +2,9 @@ const { Fragment, useState, useEffect } = React;
 
 const OneMoreGallery = ({ galleryItem }) => {
   useEffect(() => {
-    if (document.activate) {
+    if (!document.galleriesIsLoaded) {
       var galleries2 = $(".ad-gallery").adGallery();
-      document.activate = false;
+      document.galleriesIsLoaded = true;
     }
   }, []);
   return (
@@ -52,14 +52,15 @@ const More = () => {
     items: [],
   });
   const [counter, setCounter] = useState({
-    last: 2,
-    step: 3,
+    last: 3,
+    step: 4,
   });
 
   //   prevent loading copies of 'ad-preloads'(almost)
-  document.activate = true;
+  document.galleriesIsLoaded = false;
 
   const getMoreGalleries = () => {
+    setCounter({ ...counter, step: counter.step + 1 });
     axios
       .get("", {
         params: {
@@ -71,7 +72,6 @@ const More = () => {
         setGalleries({ preloader: false, items: response.data.more });
       })
       .catch((error) => console.log(error));
-    setCounter({ ...counter, step: counter.step + 1 });
   };
   console.log(counter);
   return (
@@ -84,4 +84,10 @@ const More = () => {
   );
 };
 
-ReactDOM.render(<More />, document.getElementById("more"));
+const RootMore = () => {
+  return (
+    <More/>
+  )
+}
+
+ReactDOM.render(<RootMore />, document.getElementById("more"));

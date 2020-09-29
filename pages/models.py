@@ -14,8 +14,8 @@ class InPageImages(models.Model):
         null=True
     )
     imageName = models.CharField('Название', max_length=50)
-    categoryImage = VersatileImageField(
-        verbose_name='Image', ppoi_field='ppoi', blank=True,
+    pageImage = VersatileImageField(
+        verbose_name='Image', ppoi_field='ppoi', blank=False,
         null=True
     )
     ppoi = PPOIField()

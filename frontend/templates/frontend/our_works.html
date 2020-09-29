@@ -52,8 +52,8 @@ Body
                 <div class="ad-thumbs">
                     <ul class="ad-thumb-list">
                         {% for item in gallery.inpageimages_set.all %}
-                        <li> <a href="/media/{{ item.categoryImage }}"> <img
-                                    src="{{ item.categoryImage.thumbnail.160x107 }}" width="160" height="107" /> </a>
+                        <li> <a href="/media/{{ item.pageImage }}"> <img
+                                    src="{{ item.pageImage.thumbnail.160x107 }}" width="160" height="107" /> </a>
                         </li>
                         {% endfor %}
                     </ul>

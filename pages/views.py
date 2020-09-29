@@ -33,8 +33,8 @@ def our_works(request):
             }
             for image in item.inpageimages_set.all():
                 itemDict['images'].append({
-                    'image': image.categoryImage.url,
-                    'thumbnail': image.categoryImage.thumbnail['160x107'].url
+                    'image': image.pageImage.url,
+                    'thumbnail': image.pageImage.thumbnail['160x107'].url
                 })
             moreGallery.append(itemDict)                
         return JsonResponse({
@@ -52,7 +52,7 @@ def our_works(request):
         {
             'content': content,
             'ourWorks': True,
-            'galleries': galleries[0:2],
+            'galleries': galleries[0:3],
         }
     )
 
