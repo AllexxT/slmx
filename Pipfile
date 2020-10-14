@@ -11,6 +11,7 @@ django-ckeditor = "*"
 django-livereload-server = "*"
 django-uuslug = "*"
 django-versatileimagefield = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.7"

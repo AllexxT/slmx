@@ -13,7 +13,8 @@ import os
 from pathlib import Path
 from silmix.versatileConfig import VERSATILEIMAGEFIELD_SETTINGS
 from silmix.ckeditorConfig import CKEDITOR_CONFIGS
-from silmix.SK import SECRET_KEY
+from silmix.config import SECRET_KEY
+from silmix.config import DATABASES
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['silmix.zp.ua', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'frontend',
     'catalog',
     'pages',
-    
 ]
 
 MIDDLEWARE = [
@@ -63,7 +63,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # # For Deploying
 # CORS_ORIGIN_ALLOW_ALL = False
 # CORS_ORIGIN_WHITELIST = (
-#        'http://localhost:4200',
+#        'https://silmix.zp.ua',
 # )
 
 ROOT_URLCONF = 'silmix.urls'
@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'silmix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

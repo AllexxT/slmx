@@ -35,13 +35,13 @@ Head
     {% endif %}
     {% endblock title %}
 </title>
-{% comment %}
-Body
-{% endcomment %}
+{% comment %} Body {% endcomment %}
 {% block content %}
 <div class="title">
     <h1>{{ content.readableTitle }}</h1>
 </div>
+{% if not galleries %}<p class="no-content">Работы скоро будут добавлены</p>
+{% else %}
 {% for gallery in galleries %}
 <div class="our-works">
     <div class="our-works__gallery">
@@ -74,8 +74,11 @@ Body
     </div>
 </div>
 {% endfor %}
+{% comment %} CHANGE VISIBILITY OF PAGINATION BUTTON {% endcomment %}
+{% if galleries.count > 2 %}
 <div id="more"></div>
 <script src="{% static 'frontend/js/our_works__more.jsx' %}" type="text/babel"></script>
+{% endif %}
 
 <script>
     // RELOADS WEBPAGE WHEN MOBILE ORIENTATION CHANGES  
@@ -90,5 +93,5 @@ Body
         }
     };
 </script>
-
+{% endif %}
 {% endblock content %}

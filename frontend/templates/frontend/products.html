@@ -21,6 +21,8 @@ Body
 <div class="title">
     <h1>{{ products.0.category}}</h1>
 </div>
+{% if not products %} <p class="no-content">Товары скоро будут добавлены</p>
+{% else %}
 <ul class="products">
     {% for item in products %}
     <li class="item">
@@ -45,4 +47,5 @@ Body
     </li>
     {% endfor %}
 </ul>
+{% endif %}
 {% endblock content %}
