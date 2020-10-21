@@ -33,9 +33,10 @@ body {
     }
     footer {
         width: 100%;
-        background: $BACK-BACKGROUND;
-        border-top: 6px solid $BACK-BACKGROUND;
+        background: white;
+        // border-top: 1px solid $BACK-BACKGROUND;
         padding-bottom: 30px;
+        padding-top: 50px;
     }
 }
 %container {
@@ -183,12 +184,19 @@ body {
 .side-menu {
     width: 280px;
     background: $BLOCK-BACKGROUND;
-    display: inline-block;
-    list-style-type: none;
-    font-size: 16px;
     border-right: 6px solid $BACK-BACKGROUND;
-    text-align: center;
-    font-weight: bold;
+    display: inline-block;
+
+
+    &__list {
+        position: sticky;
+        top: 0;
+        list-style-type: none;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+
     &__item {
         padding: 7px 0;
     }

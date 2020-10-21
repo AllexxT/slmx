@@ -83,7 +83,7 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .site-section main { display: flex; flex: 1 0 auto; flex-direction: column; background: white; }
 
-.site-section footer { width: 100%; background: #e6ebe5; border-top: 6px solid #e6ebe5; padding-bottom: 30px; }
+.site-section footer { width: 100%; background: white; padding-bottom: 30px; padding-top: 50px; }
 
 .container, .body-container { max-width: 1265px; margin: 0px auto; display: flex; flex-flow: column; }
 
@@ -139,7 +139,9 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .body-wrapper { display: flex; height: 100%; }
 
-.side-menu { width: 280px; background: white; display: inline-block; list-style-type: none; font-size: 16px; border-right: 6px solid #e6ebe5; text-align: center; font-weight: bold; }
+.side-menu { width: 280px; background: white; border-right: 6px solid #e6ebe5; display: inline-block; }
+
+.side-menu__list { position: sticky; top: 0; list-style-type: none; font-size: 16px; text-align: center; font-weight: bold; }
 
 .side-menu__item { padding: 7px 0; }
 

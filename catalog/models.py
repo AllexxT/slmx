@@ -102,6 +102,7 @@ class Product(models.Model):
         'Позиция', blank=True, null=True, default=0
     )
     discount = models.BooleanField('Скидка', blank=True, default=False)
+    nds = models.BooleanField('НДС', blank=True, default=False)
     sertificate = models.BooleanField('Сертификат', blank=True, default=False)
     category = models.ForeignKey(
         Category, verbose_name="Категория", on_delete=models.CASCADE

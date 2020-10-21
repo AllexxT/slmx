@@ -25,7 +25,7 @@
 
 .benefits__list { padding-left: 20px; width: 100%; }
 
-.benefits__list li { color: #727272; display: inline-block; float: left; font-size: 16px; line-height: 25px; margin-right: 10%; position: relative; width: 40%; }
+.benefits__list li { color: #727272; display: inline-block; float: left; font-size: 16px; line-height: 25px; margin-right: 10%; position: relative; width: 39%; }
 
 .benefits__list li::after { background: url(../images/birdie.png); background-repeat: no-repeat; content: ""; height: 18px; left: -20px; position: absolute; top: 0; width: 19px; }
 
@@ -33,7 +33,7 @@
 
 .specific table { color: #727272; font-size: 15px; margin-bottom: 40px; text-align: left; width: 100%; max-width: 100%; background-color: transparent; border-collapse: collapse; border-spacing: 0; }
 
-.specific table tr:nth-child(2n) { background: #e6ebe5; /* Цвет фона */ }
+.specific table tr:nth-child(2n) { background: #c8d6c5; /* Цвет фона */ }
 
 .specific table td { padding: 5px; line-height: 20px; }
 

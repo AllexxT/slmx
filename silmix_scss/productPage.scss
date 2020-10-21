@@ -71,7 +71,7 @@
             line-height: 25px;
             margin-right: 10%;
             position: relative;
-            width: 40%;
+            width: 39%;
             &::after {
                 background: url(../images/birdie.png);
                 background-repeat: no-repeat;
@@ -102,7 +102,7 @@
         border-collapse: collapse;
         border-spacing: 0;
         tr:nth-child(2n) {
-            background: $BACK-BACKGROUND; /* Цвет фона */
+            background: #c8d6c5; /* Цвет фона */
         }
         td {
             padding: 5px;

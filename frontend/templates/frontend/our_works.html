@@ -37,9 +37,6 @@ Head
 </title>
 {% comment %} Body {% endcomment %}
 {% block content %}
-<div class="title">
-    <h1>{{ content.readableTitle }}</h1>
-</div>
 {% if not galleries %}<p class="no-content">Работы скоро будут добавлены</p>
 {% else %}
 {% for gallery in galleries %}

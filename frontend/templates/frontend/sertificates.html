@@ -22,9 +22,6 @@ Head
 Body
 {% endcomment %}
 {% block content %}
-<div class="title">
-    <h1>{{ content.readableTitle }}</h1>
-</div>
 
 {% for sertificat in content.inpagefiles_set.all %}
 <a class='sertificate-name' target='_blank' href='/media/{{ sertificat.file }}'>{{ sertificat.fileName }}</a>

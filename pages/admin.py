@@ -89,20 +89,3 @@ class OurWorksAdmin(admin.ModelAdmin):
         'title',
         'address',
     )
-
-
-# pages = [
-#     'index', 'o-kompanii', 'products', 'poleznaya-informaciya',
-#     'sertifikaty', 'nashi-raboty', 'kontakty',
-#     'smesi-dlya-utepleniya', 'smesi-dlya-pola',
-#     'kladochnye-smesi', 'smesi-dlya-oblicovki',
-#     'shtukaturnye-smesi'
-# ]
-
-# categorii_url = [
-#     'smesi-dlya-utepleniya/',
-# 	'shtukaturnye-smesi/',
-# 	'smesi-dlya-pola/',
-# 	'smesi-dlya-oblicovki/',
-# 	'kladochnye-smesi/',
-# ]
