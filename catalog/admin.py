@@ -38,6 +38,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         ('price',
+         'nds',
         'position'),
         'title',
         'seoDescription',

@@ -91,13 +91,14 @@ Body
         <div class="read-more"><span>Все характеристики</span></div>
     </div>
     <div class="product__price">
-    <span>
+    <p>
     {% if product.price %}
     {{ product.price|floatformat:'-2' }} грн.
+    {% if product.nds %}<br><span>с НДС</span>{% endif %}
     {% else %}
     <a style="text-decoration: underline" href="tel:+380631234567">Уточнить цену в офисе </a>
     {% endif %}
-    </span>
+    </p>
     </div>
 </div>
 <div class="description">

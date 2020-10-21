@@ -20,4 +20,6 @@
 
 .products .item__price { display: flex; flex: 1 0 auto; font-size: 18px; color: black; margin: 5px 0 0 0; text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 1px; }
 
+.products .item__price span { font-size: 12px; }
+
 .item p { color: #727272; font-size: 15px; margin: 8px 0 10px 0; }
