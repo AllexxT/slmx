@@ -12,6 +12,7 @@ django-livereload-server = "*"
 django-uuslug = "*"
 django-versatileimagefield = "*"
 mysqlclient = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
