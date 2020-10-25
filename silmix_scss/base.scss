@@ -304,6 +304,9 @@ body {
     }
 
     &__links {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
         & li {
             line-height: 25px;
         }

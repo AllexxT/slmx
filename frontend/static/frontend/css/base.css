@@ -172,6 +172,8 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 @media (max-width: 585px) { .footer__logo-container { padding-top: 10px; max-width: 200px; max-height: 75px; } }
 
+.footer__links { display: flex; flex-flow: column; justify-content: space-between; }
+
 .footer__links li { line-height: 25px; }
 
 .footer__links p { font-size: 16px; font-weight: 700; color: #636466; line-height: 25px; padding-bottom: 5px; }
