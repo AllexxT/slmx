@@ -21,6 +21,7 @@
         transition: all 0.15s linear;
         overflow-y: scroll;
         padding-bottom: 150px;
+        background: white;
     }
     &__item {
         position: relative;
@@ -56,7 +57,7 @@
     transform: translate3d(240px, 0, 0);
 }
 .mobile-subnav {
-    background-color: #292929;
+    background-color: white;
 }
 
 [class*=" icon-"],
@@ -90,7 +91,7 @@
     content: "›";
 }
 .mobile-nav__back {
-    background-color: #4b4b4b;
+    background-color: #e6ebe5;
     padding-left: 40px;
     font-weight: 200;
 }
@@ -109,8 +110,8 @@
 }
 
 .mobile-subnav .mobile-nav__item {
-    border-bottom: 1px solid #343434;
-    color: #fff;
+    border-bottom: 1px solid #d8d8d8;
+    color: rgb(41, 41, 41);
     font-family: oswald;
     font-size: 13px;
     a {
