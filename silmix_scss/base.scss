@@ -89,7 +89,9 @@ body {
     }
 
     &__social {
-
+        @media (max-width: 640px) {
+            display: none;
+        }
     }
 
     &__social-item{
@@ -142,7 +144,7 @@ body {
         }
     }
     @media (max-width: 800px) {
-        justify-content: unset;
+        justify-content: space-between;
     }
 }
 
@@ -181,7 +183,7 @@ body {
             top: 47%;
         }
     }
-    @media (min-width: 800px) {
+    @media (min-width: 801px) {
         display: none;
         justify-content: unset;
     }
@@ -344,4 +346,20 @@ a.menu-active {
     display: inline-block;
     top:2px;
     position: relative;
+}
+
+.social-adaptive {
+    display: none;
+    margin-right: 20px;
+    & a {
+        margin-right: 20px;
+    }
+    & .social-icon {
+        width: 26px;
+        height: 26px;
+        top: 0px;
+    }
+    @media (max-width: 640px) {
+        display: block;
+    }
 }

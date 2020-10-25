@@ -97,6 +97,8 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .contacts { display: flex; flex: 1 1 33.33%; align-items: center; justify-content: space-evenly; font-style: italic; padding-right: 5px; text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px; }
 
+@media (max-width: 640px) { .contacts__social { display: none; } }
+
 .contacts__social-item { display: block; margin-top: 13.5px; font-size: 16px; transition: all 0.3s ease-out; }
 
 .contacts__social-item:hover { color: red; }
@@ -115,7 +117,7 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .top-menu__link:hover { color: red; }
 
-@media (max-width: 800px) { .top-menu { justify-content: unset; } }
+@media (max-width: 800px) { .top-menu { justify-content: space-between; } }
 
 .burger-wrapper { position: relative; display: block; width: 30px; height: 28px; text-align: center; margin-left: 10px; }
 
@@ -129,7 +131,7 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .burger-wrapper .burger span { position: absolute; background: black; height: 2px; left: 0; width: 100%; top: 47%; }
 
-@media (min-width: 800px) { .burger-wrapper { display: none; justify-content: unset; } }
+@media (min-width: 801px) { .burger-wrapper { display: none; justify-content: unset; } }
 
 .content { background: white; height: 100%; }
 
@@ -185,3 +187,11 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 a.menu-active { color: red; }
 
 .social-icon { width: 18px; height: 18px; display: inline-block; top: 2px; position: relative; }
+
+.social-adaptive { display: none; margin-right: 20px; }
+
+.social-adaptive a { margin-right: 20px; }
+
+.social-adaptive .social-icon { width: 26px; height: 26px; top: 0px; }
+
+@media (max-width: 640px) { .social-adaptive { display: block; } }

@@ -63,6 +63,15 @@
                     <li class="top-menu__item"><a href="{% url 'our_works' %}"
                             class="top-menu__link {% if ourWorks %}menu-active{% endif %}">Наши работы</a></li>
                 </ol>
+                <div class="social-adaptive">
+                    {% for social in frontend.social %}
+                    <a href="{{ social.link }}">
+                        <span class="social-icon"
+                        style='background: url({{ social.iconUrl }}) center/100%;
+                        '></span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
         </header>
         <main>
