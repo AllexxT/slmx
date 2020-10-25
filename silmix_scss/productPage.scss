@@ -5,6 +5,7 @@
 
     &__image-container {
         max-width: 380px;
+        overflow: hidden;
     }
 
     &__image {
@@ -14,7 +15,8 @@
         flex: 0 1 33%;
         img {
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
         }
         @media (max-width: 650px) {
             justify-content: center;

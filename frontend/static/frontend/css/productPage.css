@@ -1,11 +1,11 @@
 @charset "UTF-8";
 .product { display: flex; }
 
-.product__image-container { max-width: 380px; }
+.product__image-container { max-width: 380px; overflow: hidden; }
 
 .product__image { position: relative; display: flex; padding: 15px 15px 0 15px; flex: 0 1 33%; }
 
-.product__image img { width: 100%; object-fit: contain; }
+.product__image img { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 650px) { .product__image { justify-content: center; } }
 

@@ -96,7 +96,11 @@ Body
     {{ product.price|floatformat:'-2' }} грн.
     {% if product.nds %}<br><span>с НДС</span>{% endif %}
     {% else %}
-    <a style="text-decoration: underline" href="tel:+380631234567">Уточнить цену в офисе </a>
+        {% if frontend.phones.0 %}
+        <a style="text-decoration: underline" href="tel:{{frontend.phones.0}}">Уточнить цену в офисе </a>
+        {% else %}
+        <a style="text-decoration: underline" href="tel:+380631234567">Уточнить цену в офисе </a>
+        {% endif %}
     {% endif %}
     </p>
     </div>

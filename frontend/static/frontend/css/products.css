@@ -10,9 +10,9 @@
 
 .item__novelty { width: 30%; position: absolute; right: 0; top: 0; }
 
-.item__image { display: flex; text-align: center; max-width: 80%; margin: 5px auto 0 auto; flex: 1 0 auto; max-height: 207px; }
+.item__image { display: flex; text-align: center; margin: 5px auto 0 auto; flex: 1 0 auto; max-height: 207px; overflow: hidden; }
 
-.item__image img { max-width: 100%; object-fit: contain; }
+.item__image img { max-width: 100%; object-fit: cover; }
 
 .item__description-box { min-height: 105px; display: flex; flex-flow: column; }
 
