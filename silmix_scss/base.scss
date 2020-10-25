@@ -55,19 +55,20 @@ body {
 .header {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 5px;
     // justify-content: flex-end;
-    .spacer {
-        display: flex;
-        flex: 1 1 33.33%;
-        @media (max-width: 800px) {
-            display: none;
-        }
-    }
+    // .spacer {
+    //     display: flex;
+    //     flex: 1 1 33.33%;
+    //     @media (max-width: 800px) {
+    //         display: none;
+    //     }
+    // }
 
     // .header__logo
 
     &__logo {
-        max-width: 400px;
+        max-width: 345px;
         img {
             object-fit: contain;
             width: 100%;
@@ -77,21 +78,37 @@ body {
 .contacts {
     display: flex;
     flex: 1 1 33.33%;
-    flex-flow: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     font-style: italic;
     padding-right: 5px;
-    @media (max-width: 800px) {
-        flex: unset;
-    }
-    &__items {
-        padding-bottom: 5px;
-    }
-    // .contacts__item
+    text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
 
-    &__item {
-        margin-top: 15px;
+    @media (max-width: 800px) {
+        // flex: unset;
+    }
+
+    &__social {
+
+    }
+
+    &__social-item{
+        display: block;
+        margin-top: 13.5px;
+        font-size: 16px;
+        transition: all 0.3s ease-out;
+        &:hover {
+            color: red;
+        }
+    }
+
+    &__numbers {
+        // padding-bottom: 5px;
+    }
+    // .contacts__number
+
+    &__number {
+        margin-top: 18.5px;
         font-size: 16px;
     }
 }
@@ -319,4 +336,12 @@ body {
 
 a.menu-active {
     color: red;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    top:2px;
+    position: relative;
 }

@@ -22,13 +22,23 @@
         <header>
             <div class="container">
                 <div class="header">
-                    <div class="spacer"></div>
+                    {% comment %} <div class="spacer"></div> {% endcomment %}
                     <div class="header__logo"><img src="{% static 'frontend/images/Logo.jpg' %}" alt="Silmix"></div>
                     <div class="contacts">
-                        <div class="contacts__items">
-                            <div class="contacts__item">+380631234567</div>
-                            <div class="contacts__item">+380631234567</div>
-                            <div class="contacts__item">silmix@gmail.com</div>
+                        <div class="contacts__social">
+                            {% for social in frontend.social %}
+                            <a href="{{ social.link }}" class="contacts__social-item" target="_blank">
+                            <span class="social-icon"
+                            style='background: url({{ social.iconUrl }}) center/100%;
+                            '></span>
+                            {{ social.socName }}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="contacts__numbers">
+                            {% for phone in frontend.phones %}
+                            <div class="contacts__number">{{ phone }}</div>
+                            {% endfor %}
+                            <div class="contacts__number">{{ frontend.email }}</div>
                         </div>
                     </div>
                 </div>

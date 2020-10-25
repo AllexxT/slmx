@@ -89,23 +89,19 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .body-container { height: 100%; }
 
-.header { display: flex; justify-content: space-around; }
+.header { display: flex; justify-content: space-around; padding-bottom: 5px; }
 
-.header .spacer { display: flex; flex: 1 1 33.33%; }
-
-@media (max-width: 800px) { .header .spacer { display: none; } }
-
-.header__logo { max-width: 400px; }
+.header__logo { max-width: 345px; }
 
 .header__logo img { object-fit: contain; width: 100%; }
 
-.contacts { display: flex; flex: 1 1 33.33%; flex-flow: column; align-items: center; justify-content: flex-end; font-style: italic; padding-right: 5px; }
+.contacts { display: flex; flex: 1 1 33.33%; align-items: center; justify-content: space-evenly; font-style: italic; padding-right: 5px; text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px; }
 
-@media (max-width: 800px) { .contacts { flex: unset; } }
+.contacts__social-item { display: block; margin-top: 13.5px; font-size: 16px; transition: all 0.3s ease-out; }
 
-.contacts__items { padding-bottom: 5px; }
+.contacts__social-item:hover { color: red; }
 
-.contacts__item { margin-top: 15px; font-size: 16px; }
+.contacts__number { margin-top: 18.5px; font-size: 16px; }
 
 .top-menu { display: flex; background: #e6ebe5; min-height: 28px; justify-content: center; }
 
@@ -187,3 +183,5 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 .no-content { font-size: 24px; color: gray; text-align: center; margin-top: 50px; }
 
 a.menu-active { color: red; }
+
+.social-icon { width: 18px; height: 18px; display: inline-block; top: 2px; position: relative; }

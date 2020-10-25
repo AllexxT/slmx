@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 from pages.models import (
-    Page, InPageImages, InPageFiles, InPageImages, OurWorks
+    Page, InPageImages, InPageFiles, InPageImages, OurWorks,
 )
 from silmix.settings import DEBUG
 # import pprint
