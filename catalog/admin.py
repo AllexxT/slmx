@@ -1,4 +1,5 @@
 from django.contrib import admin
+from silmix.settings import DEBUG
 
 from catalog.models import (
     Category, Product, Benefits, Specific
@@ -7,10 +8,8 @@ from catalog.models import (
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-
     fields = (
         'categoryName',
-        'slugUrl',
         'categoryImage',
     )
 
@@ -20,6 +19,12 @@ class CategoryAdmin(admin.ModelAdmin):
         'categoryImage'
     )
     # radio_fields = {"_category": admin.HORIZONTAL}
+    if DEBUG == True:    
+        fields = (
+            'categoryName',
+            'slugUrl',
+            'categoryImage',
+        )
 
 
 @admin.register(Product)
