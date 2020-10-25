@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'frontend/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/base.css' %}?v=2.1">
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -29,7 +29,7 @@
                             {% for social in frontend.social %}
                             <a href="{{ social.link }}" class="contacts__social-item" target="_blank">
                             <span class="social-icon"
-                            style='background: url({{ social.iconUrl }}) center/100%;
+                            style='background: url({{ social.iconUrl }}) center/100% no-repeat;
                             '></span>
                             {{ social.socName }}</a>
                             {% endfor %}
@@ -65,9 +65,9 @@
                 </ol>
                 <div class="social-adaptive">
                     {% for social in frontend.social %}
-                    <a href="{{ social.link }}">
+                    <a href="{{ social.link }}" target="_blank">
                         <span class="social-icon"
-                        style='background: url({{ social.iconUrl }}) center/100%;
+                        style='background: url({{ social.iconUrl }}) center/100% no-repeat;
                         '></span>
                     </a>
                     {% endfor %}
