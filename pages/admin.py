@@ -3,6 +3,7 @@ from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 from pages.models import (
     Page, InPageImages, InPageFiles, InPageImages, OurWorks,
+    Contacts, ContactsText
 )
 from silmix.settings import DEBUG
 # import pprint
@@ -88,4 +89,26 @@ class OurWorksAdmin(admin.ModelAdmin):
         'category',
         'title',
         'address',
+    )
+
+
+@admin.register(Contacts)
+class ContactsAdmin(admin.ModelAdmin):
+    
+    class TextInline(admin.TabularInline):
+        model = ContactsText
+        extra = 0
+    inlines = [ TextInline, ]
+    save_on_top = True
+    
+    fields = (
+        'position',
+        'h2',
+        # 'allTexts',
+    )
+    
+    list_display = (
+        'h2',
+        'position',
+        'allTexts',
     )

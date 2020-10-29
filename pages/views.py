@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import JsonResponse
 from django.templatetags.static import static
-from pages.models import Page, OurWorks
+from pages.models import Page, OurWorks, Contacts
 
 
 def sertificates(request):
@@ -70,11 +70,13 @@ def about(request):
 
 def contacts(request):
     content = Page.objects.get(page='kontakty')
+    contactsList = Contacts.objects.all()
     return render(
         request, 'frontend/contacts.html',
         {
             'content': content,
             'contacts': True,
+            'contactsList': contactsList,
         }
     )
 

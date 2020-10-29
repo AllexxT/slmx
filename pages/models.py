@@ -13,7 +13,7 @@ class InPageImages(models.Model):
         "OurWorks", verbose_name='Наши работы', on_delete=models.CASCADE,
         null=True
     )
-    imageName = models.CharField('Название', max_length=50)
+    imageName = models.CharField('Название', max_length=50, null=True, blank=True)
     pageImage = VersatileImageField(
         verbose_name='Image', ppoi_field='ppoi', blank=False,
         null=True
@@ -94,4 +94,34 @@ class OurWorks(models.Model):
     class Meta:
         verbose_name_plural = 'Галерея наших работ'
         verbose_name = 'Фото наших работ'
-        
+
+
+class Contacts(models.Model):
+    h2 = models.CharField(
+        'Заголовок контактной информации', max_length=150,
+        blank=True, null=True
+    )
+    position = models.IntegerField(
+        "Позиция на странице", null=True, blank=True
+    )
+
+    def allTexts(self):
+        return f'{len(self.contactstext_set.all())}'
+    allTexts.short_description = "Количество текстовых блоков"
+
+    def __str__(self):
+        return self.h2
+    
+    class Meta:
+        ordering = ['-position']
+        verbose_name_plural = 'Контактная информация'
+        verbose_name = 'Контактную информацию'
+    
+
+class ContactsText(models.Model):
+    contacts = models.ForeignKey(Contacts, on_delete=models.CASCADE)
+    text = RichTextField('Контактная информация', blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Текст контактной информации'
+        verbose_name = 'Текст контактной информации'

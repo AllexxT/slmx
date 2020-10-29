@@ -5,6 +5,7 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/css/contacts.css' %}">
 <meta name="description" content="{{ content.description }}">
 <meta name="keywords" content="{{ content.keywords }}">
 {% endblock meta %}
@@ -21,6 +22,22 @@ Head
 Body
 {% endcomment %}
 {% block content %}
-
+<div class="title">
+    <h1>Контактная информация</h1>
+</div>
+<div class="contacts-page">
+    {% for contact in contactsList %}
+    <div class="contact">
+        <h2>{{ contact.h2 }}</h2>
+        <div class="contact__info">
+            {% for contactBlock in contact.contactstext_set.all %}
+            <div class="contact__info-block">
+            {{ contactBlock.text | safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}
