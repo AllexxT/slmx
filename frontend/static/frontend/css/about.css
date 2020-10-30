@@ -7,3 +7,17 @@
 .about-page ul { display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 40px; }
 
 .about-page ul li { display: list-item; text-align: -webkit-match-parent; line-height: 1.6; list-style: disc; }
+
+.about-page ol { display: block; margin: 0 0 15px 25px; padding: 0; }
+
+.about-page ol ol { margin-top: 15px; }
+
+.about-page ol li { list-style: outside decimal; margin: 0 0 10px 0; }
+
+.about-page table { width: 100%; margin-bottom: 15px; table-layout: fixed; }
+
+.about-page th { font-weight: 900; padding: 10px; }
+
+.about-page thead th { background-color: #f1f1f1; border: 1px solid #ddd; text-align: center; }
+
+.about-page td { border: 1px solid #ddd; background-color: #fff; padding: 10px; }

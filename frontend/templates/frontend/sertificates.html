@@ -24,7 +24,22 @@ Body
 {% block content %}
 
 {% for sertificat in content.inpagefiles_set.all %}
-<a class='sertificate-name' target='_blank' href='/media/{{ sertificat.file }}'>{{ sertificat.fileName }}</a>
+<style>
+    .sertificate-page {
+        padding: 20px 10px 0 10px;
+    }
+    .sertificate-page .sertificate-name {
+        color: #1f3c09;
+    }
+    .sertificate-name:hover {
+        color: green;
+    }
+</style>
+<div class="sertificate-page">
+    <div class="sertificate-page__content">
+        <a class='sertificate-name' target='_blank' href='/media/{{ sertificat.file }}'>{{ sertificat.fileName }}</a>
+    </div>
+</div>
 {% comment %} <iframe src="/media/{{ sertificat.file }}" width="100%" height="500px" style='border: none;'></iframe>
 {% endcomment %}
 {% endfor %}

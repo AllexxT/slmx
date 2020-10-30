@@ -29,7 +29,7 @@ Body
         {% if item.discount %}
         <img class="item__novelty" src="{% static 'frontend/images/skidka.png' %}" alt="">
         {% endif %}
-        <a href="{{ item.get_absolute_url }}{{ item.slug }}" class="item__image">
+        <a href="{{ item.get_absolute_url }}" class="item__image">
             <img src="
                     {% if item.productImage %}
             /media/{{ item.productImage }}
@@ -38,7 +38,7 @@ Body
             {% endif %}" alt="{{ item.name }} - Silmix">
         </a>
         <div class='item__description-box'>
-            <a href="{{ item.get_absolute_url }}{{ item.slug }}" class="item__name">{{ item.name }}</a>
+            <a href="{{ item.get_absolute_url }}" class="item__name">{{ item.name }}</a>
             {% if item.price %}
             <p class="item__price">{{ item.price|floatformat:'-2' }} грн.&nbsp
             {% if item.nds %}<span>с НДС</span>{% endif %}

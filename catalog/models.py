@@ -108,6 +108,10 @@ class Product(models.Model):
         Category, verbose_name="Категория", on_delete=models.CASCADE
     )
     
+    def get_absolute_url(self):
+        return f"/{self.category.get_absolute_url() + self.slug}"
+    
+    
     def seoInfo(self):
         if len(self.seoDescription) == 0 and self.title == None:
             return 'Отсутствует'

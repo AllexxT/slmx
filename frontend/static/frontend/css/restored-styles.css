@@ -5,3 +5,17 @@ p { display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inlin
 ul { display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 40px; }
 
 ul li { display: list-item; text-align: -webkit-match-parent; line-height: 1.6; list-style: disc; }
+
+ol { display: block; margin: 0 0 15px 25px; padding: 0; }
+
+ol ol { margin-top: 15px; }
+
+ol li { list-style: outside decimal; margin: 0 0 10px 0; }
+
+table { width: 100%; margin-bottom: 15px; table-layout: fixed; }
+
+th { font-weight: 900; padding: 10px; }
+
+thead th { background-color: #f1f1f1; border: 1px solid #ddd; text-align: center; }
+
+td { border: 1px solid #ddd; background-color: #fff; padding: 10px; }
