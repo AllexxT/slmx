@@ -1,7 +1,7 @@
-@import "./restored-styles.scss";
 
 .about-page {
-    padding-left: 20px;
+    @import "./restored-styles.scss";
+    padding: 0 10px 0 15px;
     &__content {
     }
 }
