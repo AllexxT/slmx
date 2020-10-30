@@ -5,6 +5,7 @@ Head
 {% endcomment %}
 {% block meta %}
 <link rel="stylesheet" href="{% static 'frontend/css/productPage.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/css/about.css' %}">
 <meta name="description" content="{{ content.description }}">
 <meta name="keywords" content="{{ content.keywords }}">
 {% endblock meta %}
@@ -21,6 +22,12 @@ Head
 Body
 {% endcomment %}
 {% block content %}
-
+<div class="about-page">
+    <div class="about-page__content">
+    {% if content.body %}
+    {{ content.body | safe }}
+    {% endif %}
+    </div>
+</div>
 
 {% endblock content %}
