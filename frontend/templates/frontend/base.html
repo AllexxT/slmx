@@ -22,8 +22,9 @@
         <header>
             <div class="container">
                 <div class="header">
-                    {% comment %} <div class="spacer"></div> {% endcomment %}
-                    <div class="header__logo"><img src="{% static 'frontend/images/Logo.jpg' %}" alt="Silmix"></div>
+                    <div class="logo-container">
+                        <div class="header__logo"><img src="{% static 'frontend/images/Logo.jpg' %}" alt="Silmix"></div>
+                    </div>                    
                     <div class="contacts">
                         <div class="contacts__social">
                             {% for social in frontend.social %}

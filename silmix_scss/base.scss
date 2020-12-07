@@ -77,14 +77,15 @@ body {
 }
 .contacts {
     display: flex;
-    flex: 1 1 33.33%;
+    flex: 1;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-style: italic;
     padding-right: 5px;
     text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
 
     @media (max-width: 800px) {
+        justify-content: space-around;
         // flex: unset;
     }
 
@@ -114,6 +115,11 @@ body {
         font-size: 16px;
     }
 }
+
+.logo-container {
+    flex: 1;
+}
+
 
 .top-menu {
     display: flex;

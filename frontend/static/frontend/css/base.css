@@ -95,7 +95,9 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 
 .header__logo img { object-fit: contain; width: 100%; }
 
-.contacts { display: flex; flex: 1 1 33.33%; align-items: center; justify-content: space-evenly; font-style: italic; padding-right: 5px; text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px; }
+.contacts { display: flex; flex: 1; align-items: center; justify-content: space-between; font-style: italic; padding-right: 5px; text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px; }
+
+@media (max-width: 800px) { .contacts { justify-content: space-around; } }
 
 @media (max-width: 640px) { .contacts__social { display: none; } }
 
@@ -104,6 +106,8 @@ body { background: #e6ebe5; font-family: Arial, Helvetica, sans-serif; color: #3
 .contacts__social-item:hover { color: red; }
 
 .contacts__number { margin-top: 18.5px; font-size: 16px; }
+
+.logo-container { flex: 1; }
 
 .top-menu { display: flex; background: #e6ebe5; min-height: 28px; justify-content: center; }
 
